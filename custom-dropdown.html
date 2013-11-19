@@ -8,6 +8,11 @@
         elCustomDropdown,
         elCustomDropdownUl;
 
+    function escapeKeyHandler(event){
+      if(event.keyCode === 27){
+        customDropdownToggle(event);
+      }
+    };
     function customDropdownToggle(event){
       var ddClasslist = elCustomDropdown.classList;
 
@@ -26,6 +31,8 @@
       elCustomDropdownUl = elCustomDropdown.querySelector('ul');
 
       elCustomDropdown.addEventListener('click', customDropdownToggle.bind(this));
+
+      elDocument.addEventListener('keydown', escapeKeyHandler.bind(this));
     });
   </script>
 </head>
