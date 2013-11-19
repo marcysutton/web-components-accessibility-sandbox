@@ -5,30 +5,43 @@
   <link rel="stylesheet" type="text/css" href="_ui/css/main.css">
   <script>
     var elDocument = document,
-        elCustomDropdown;
+        elCustomDropdown,
+        elCustomDropdownUl;
 
     function customDropdownToggle(event){
-      elCustomDropdown.classList.toggle('active');
+      var ddClasslist = elCustomDropdown.classList;
+
+      if(ddClasslist.contains('active')){
+        ddClasslist.remove('active');
+        elCustomDropdownUl.setAttribute('aria-hidden', true);
+      }
+      else {
+        ddClasslist.add('active');
+        elCustomDropdownUl.setAttribute('aria-hidden', false);
+      }
     };
 
     elDocument.addEventListener('DOMContentLoaded', function(event){
       elCustomDropdown = elDocument.querySelector('.custom-dropdown');
+      elCustomDropdownUl = elCustomDropdown.querySelector('ul');
+
       elCustomDropdown.addEventListener('click', customDropdownToggle.bind(this));
     });
   </script>
 </head>
 <body>
   <h1>Web Components & ARIA</h1>
-  <div class="custom-dropdown">
+  <div class="custom-dropdown" role="listbox">
     <a href="#linklist1" class="trigger">Select option</a>
-    <ul id="linklist1">
+    <ul id="linklist1" aria-hidden="true">
       <li><a href="#">Link 1</a></li>
       <li><a href="#">Link 2</a></li>
       <li><a href="#">Link 3</a></li>
     </ul>
   </div>
   <template>
-    <ul>
+    <a href="#linklist2" class="trigger">Select option</a>
+    <ul id="linklist2" aria-hidden="true">
       <li><a href="#">Link 1</a></li>
       <li><a href="#">Link 2</a></li>
       <li><a href="#">Link 3</a></li>
