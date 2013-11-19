@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web Components & ARIA</title>
+  <link rel="stylesheet" type="text/css" href="_ui/css/main.css">
+  <script>
+    var elDocument = document,
+        elCustomDropdown;
+
+    function customDropdownToggle(event){
+      elCustomDropdown.classList.toggle('active');
+    };
+
+    elDocument.addEventListener('DOMContentLoaded', function(event){
+      elCustomDropdown = elDocument.querySelector('.custom-dropdown');
+      elCustomDropdown.addEventListener('click', customDropdownToggle.bind(this));
+    });
+  </script>
+</head>
+<body>
+  <h1>Web Components & ARIA</h1>
+  <div class="custom-dropdown">
+    <a href="#linklist1" class="trigger">Select option</a>
+    <ul id="linklist1">
+      <li><a href="#">Link 1</a></li>
+      <li><a href="#">Link 2</a></li>
+      <li><a href="#">Link 3</a></li>
+    </ul>
+  </div>
+  <template>
+    <ul>
+      <li><a href="#">Link 1</a></li>
+      <li><a href="#">Link 2</a></li>
+      <li><a href="#">Link 3</a></li>
+    </ul>
+  </template>
+  <link-list></link-list>
+</body>
+</html>

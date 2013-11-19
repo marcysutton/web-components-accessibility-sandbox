@@ -1,0 +1,56 @@
+@import 'reset'
+@import 'mixins'
+@import 'defaults'
+
+*
+  +box-sizing
+
+body
+  font-family: Menlo, Courier, monospace
+  padding: 20px
+
+a
+  color: $link-primary-color
+
+.custom-dropdown
+  margin: $default-margin 0
+  position: relative
+  width: 30%
+
+  a
+    display: block
+    padding: $margin-unit
+    text-decoration: none
+
+  .trigger
+    background-color: $list-item-bg-color
+    font-weight: bold
+    position: relative
+    z-index: 1
+
+    &:hover, &:focus
+      color: $link-secondary-color
+
+    &:after
+      content: '\25BC'
+      display: inline-block
+      float: right
+      vertical-align: middle
+  ul
+    +box-shadow
+    display: none
+    list-style: none
+    position: relative
+    visibility: hidden
+
+    a:hover, a:focus
+      background-color: $link-secondary-color
+      color: $link-tertiary-color
+
+  &.active
+    .trigger:after
+      content: '\25B2'
+
+    ul
+      display: block
+      visibility: visible
