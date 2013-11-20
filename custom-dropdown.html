@@ -2,39 +2,9 @@
 <html>
 <head>
   <title>Web Components & ARIA</title>
-  <link rel="stylesheet" type="text/css" href="_ui/css/main.css">
-  <script>
-    var elDocument = document,
-        elCustomDropdown,
-        elCustomDropdownUl;
-
-    function escapeKeyHandler(event){
-      if(event.keyCode === 27){
-        customDropdownToggle(event);
-      }
-    };
-    function customDropdownToggle(event){
-      var ddClasslist = elCustomDropdown.classList;
-
-      if(ddClasslist.contains('active')){
-        ddClasslist.remove('active');
-        elCustomDropdownUl.setAttribute('aria-hidden', true);
-      }
-      else {
-        ddClasslist.add('active');
-        elCustomDropdownUl.setAttribute('aria-hidden', false);
-      }
-    };
-
-    elDocument.addEventListener('DOMContentLoaded', function(event){
-      elCustomDropdown = elDocument.querySelector('.custom-dropdown');
-      elCustomDropdownUl = elCustomDropdown.querySelector('ul');
-
-      elCustomDropdown.addEventListener('click', customDropdownToggle.bind(this));
-
-      elDocument.addEventListener('keydown', escapeKeyHandler.bind(this));
-    });
-  </script>
+  <link rel="stylesheet" type="text/css" href="_ui/css/main.css" />
+  <script src="_ui/js/CustomDropdown.js"></script>
+  <script src="_ui/js/main.js"></script>
 </head>
 <body>
   <h1>Web Components & ARIA</h1>
