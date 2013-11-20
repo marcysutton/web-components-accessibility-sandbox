@@ -2,9 +2,10 @@
 <html>
 <head>
   <title>Web Components & ARIA</title>
-  <link rel="stylesheet" type="text/css" href="_ui/css/main.css" />
-  <script src="_ui/js/CustomDropdown.js"></script>
-  <script src="_ui/js/main.js"></script>
+  <link rel="stylesheet" type="text/css" href="./_ui/css/main.css" />
+  <script src="./_ui/js/CustomDropdown.js"></script>
+  <script src="./_ui/js/ShadowTemplate.js"></script>
+  <script src="./_ui/js/main.js"></script>
 </head>
 <body>
   <h1>Web Components & ARIA</h1>
@@ -17,13 +18,20 @@
     </ul>
   </div>
   <template>
-    <a href="#linklist2" class="trigger">Select option</a>
-    <ul id="linklist2" aria-hidden="true">
-      <li><a href="#">Link 1</a></li>
-      <li><a href="#">Link 2</a></li>
-      <li><a href="#">Link 3</a></li>
-    </ul>
+    <style>
+      @import './_ui/css/main.css';
+    </style>
+    <script src="./_ui/js/CustomDropdown.js"></script>
+    <script src="./_ui/js/InitShadowDropdown.js"></script>
+    <div class="custom-dropdown" role="listbox">
+      <a href="#linklist2" class="trigger">Select option</a>
+      <ul id="linklist2" aria-hidden="true" class="custom-dropdown">
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+      </ul>
+    </div>
   </template>
-  <link-list></link-list>
+  <div class="link-list"></div>
 </body>
 </html>
