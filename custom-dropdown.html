@@ -9,22 +9,33 @@
 </head>
 <body>
   <h1>Web Components & ARIA</h1>
-  <div class="custom-dropdown" role="listbox">
-    <a href="#linklist1" class="trigger">Select option</a>
-    <ul id="linklist1" aria-hidden="true">
-      <li><a href="#">Link 1</a></li>
-      <li><a href="#">Link 2</a></li>
-      <li><a href="#">Link 3</a></li>
+  <main>
+  <!-- traditional DOM version -->
+  <h2>Dropdown DOM Widget</h2>
+  <div class="custom-dropdown" id="dropdown1">
+    <button id="label1" role="tab" aria-controls="linklist1">
+      <div class="accessLabel"></div>
+      select option
+    </button>
+    <ul id="linklist1" role="tabpanel" aria-hidden="true" aria-labeledby="label1" tabIndex="-1">
+      <li><a href="#" aria-role="option">Link 1</a></li>
+      <li><a href="#" aria-role="option">Link 2</a></li>
+      <li><a href="#" aria-role="option">Link 3</a></li>
     </ul>
   </div>
+  <!-- start Shadow Dom version -->
   <template>
     <style>
       @import './_ui/css/main.css';
     </style>
     <script src="./_ui/js/InitShadowDropdown.js"></script>
-    <div class="custom-dropdown" role="listbox">
-      <a href="#linklist2" class="trigger" id="shadowTrigger">Select option</a>
-      <ul id="linklist2" aria-hidden="true" class="custom-dropdown">
+    <h2>Dropdown Web Component</h2>
+    <div class="custom-dropdown" id="dropdown2">
+      <button id="label2" role="tab" aria-controls="linklist2">
+        <span class="accessLabel"></span>
+        select option
+      </button>
+      <ul id="linklist2" role="tabpanel" aria-hidden="true" aria-labeledby="label2">
         <li><a href="#">Link 1</a></li>
         <li><a href="#">Link 2</a></li>
         <li><a href="#">Link 3</a></li>
@@ -32,5 +43,6 @@
     </div>
   </template>
   <div class="link-list"></div>
+  </main>
 </body>
 </html>

@@ -8,14 +8,26 @@
 
     CustomDropdown.prototype.elCustomDropdownUl = null;
 
+    CustomDropdown.prototype.accessLabelExpanded = 'collapsed';
+
+    CustomDropdown.prototype.accessLabelCollapsed = 'expanded';
+
     function CustomDropdown() {
       this.customDropdownToggle = __bind(this.customDropdownToggle, this);
       this.escapeKeyHandler = __bind(this.escapeKeyHandler, this);
       this.elCustomDropdown = document.querySelector('.custom-dropdown');
+      this.elDropdownTrigger = this.elCustomDropdown.querySelector('button');
       this.elCustomDropdownUl = this.elCustomDropdown.querySelector('ul');
-      this.elCustomDropdown.addEventListener('click', this.customDropdownToggle);
+      this.elFirstSelectItem = this.elCustomDropdownUl.querySelector('a');
+      this.elAccessLabel = this.elCustomDropdown.querySelector('.accessLabel');
+      this.updateAccessLabel(this.accessLabelCollapsed);
+      this.elDropdownTrigger.addEventListener('click', this.customDropdownToggle);
       document.addEventListener('keydown', this.escapeKeyHandler);
     }
+
+    CustomDropdown.prototype.updateAccessLabel = function(string) {
+      return this.elAccessLabel.textContent = "" + string + " ";
+    };
 
     CustomDropdown.prototype.escapeKeyHandler = function(event) {
       if (event.keyCode === 27) {
@@ -28,10 +40,13 @@
       ddClasslist = this.elCustomDropdown.classList;
       if (ddClasslist.contains('active')) {
         ddClasslist.remove('active');
-        return this.elCustomDropdownUl.setAttribute('aria-hidden', true);
+        this.elCustomDropdownUl.setAttribute('aria-hidden', true);
+        return this.updateAccessLabel(this.accessLabelExpanded);
       } else {
         ddClasslist.add('active');
-        return this.elCustomDropdownUl.setAttribute('aria-hidden', false);
+        this.elFirstSelectItem.focus();
+        this.elCustomDropdownUl.setAttribute('aria-hidden', false);
+        return this.updateAccessLabel(this.accessLabelCollapsed);
       }
     };
 
