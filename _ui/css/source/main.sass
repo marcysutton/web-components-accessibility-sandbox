@@ -2,27 +2,18 @@
 @import 'mixins'
 @import 'defaults'
 
-*
-  +box-sizing
-
-body
-  font-family: Menlo, Courier, monospace
-  padding: 20px
-
-a
-  color: $link-primary-color
-
 .custom-dropdown
   margin: $default-margin 0
   position: relative
   width: 30%
 
-  a
+  a, button
     display: block
     padding: $margin-unit
     text-decoration: none
+    width: 100%
 
-  .trigger
+  button
     background-color: $list-item-bg-color
     font-weight: bold
 

@@ -78,27 +78,50 @@ select {
   -ms-box-sizing: border-box;
   box-sizing: border-box; }
 
-body {
+.offscreen, .accessLabel {
+  display: block;
+  left: -50000px;
+  position: absolute; }
+
+body, button {
   font-family: Menlo, Courier, monospace;
   padding: 20px; }
 
-a {
-  color: #830081; }
+button {
+  border: none;
+  font-size: 1em;
+  padding: 0;
+  text-align: left;
+  -webkit-appearance: none; }
+
+a, button {
+  color: #830081;
+  cursor: pointer; }
+
+h1, h2, h3, p {
+  margin-bottom: 16px; }
+
+h1 {
+  font-size: 1.5em; }
+
+h2 {
+  font-size: 1em; }
 
 .custom-dropdown {
   margin: 16px 0;
   position: relative;
   width: 30%; }
-  .custom-dropdown a {
+  .custom-dropdown a, .custom-dropdown button {
     display: block;
     padding: 8px;
-    text-decoration: none; }
-  .custom-dropdown .trigger {
+    text-decoration: none;
+    width: 100%; }
+  .custom-dropdown button {
     background-color: #cccccc;
     font-weight: bold; }
-    .custom-dropdown .trigger:hover, .custom-dropdown .trigger:focus {
+    .custom-dropdown button:hover, .custom-dropdown button:focus {
       color: #ff00bf; }
-    .custom-dropdown .trigger:after {
+    .custom-dropdown button:after {
       content: "\25BC";
       display: inline-block;
       float: right;
