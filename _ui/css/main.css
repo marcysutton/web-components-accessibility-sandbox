@@ -95,9 +95,7 @@ a {
     text-decoration: none; }
   .custom-dropdown .trigger {
     background-color: #cccccc;
-    font-weight: bold;
-    position: relative;
-    z-index: 1; }
+    font-weight: bold; }
     .custom-dropdown .trigger:hover, .custom-dropdown .trigger:focus {
       color: #ff00bf; }
     .custom-dropdown .trigger:after {
@@ -107,10 +105,13 @@ a {
       vertical-align: middle; }
   .custom-dropdown ul {
     box-shadow: 0 0.5em 1em #999999;
+    background-color: white;
     display: none;
     list-style: none;
-    position: relative;
-    visibility: hidden; }
+    position: absolute;
+    visibility: hidden;
+    z-index: 1;
+    width: 100%; }
     .custom-dropdown ul a:hover, .custom-dropdown ul a:focus {
       background-color: #ff00bf;
       color: white; }
