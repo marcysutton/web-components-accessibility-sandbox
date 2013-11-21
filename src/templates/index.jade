@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title Web Components & ARIA
+    link(rel="stylesheet", type="text/css", href="./_ui/css/main.css")
+    script(src="./_ui/js/CustomDropdown.js")
+    script(src="./_ui/js/ShadowTemplate.js")
+    script(src="./_ui/js/main.js")
+
+body
+  h1 Web Components & ARIA
+  main
+  
+  include mixins/_dropdown.jade
+  
+  // traditional DOM version
+  h2 Dropdown DOM Widget
+  +dropdown("dropdown1", "label1", "linklist1")
+  
+  h2 Dropdown Web Component
+  include partials/_shadow_dropdown.jade
+  
+  .link-list

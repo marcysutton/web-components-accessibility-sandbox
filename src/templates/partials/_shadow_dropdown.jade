@@ -1,0 +1,8 @@
+include ../mixins/_dropdown.jade
+
+template
+  style
+    @import './_ui/css/main.css'
+  script(src="./_ui/js/InitShadowDropdown.js")
+  div
+    +dropdown('dropdown2', 'label2', 'linklist2')

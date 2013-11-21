@@ -1,8 +1,7 @@
 /*
- * grunt-init
- * https://gruntjs.com/
+ * web-components-accessibility
  *
- * Copyright (c) 2012 "Cowboy" Ben Alman, contributors
+ * Copyright (c) 2013 Marcy Sutton
  * Licensed under the MIT license.
  */
 
@@ -14,12 +13,12 @@ module.exports = function(grunt) {
   grunt.initConfig({
     config: {
       src: 'src',
-      dist: '_ui'
+      dist: './dist'
     },
     sass: {
       dist: {
         files: {
-          '<%= config.dist %>/css/main.css' : '<%= config.src %>/styles/main.sass'
+          '<%= config.dist %>/_ui/css/main.css' : '<%= config.src %>/styles/main.sass'
         }
       }
     },
@@ -31,7 +30,7 @@ module.exports = function(grunt) {
         expand: 'yes',
         cwd: '<%= config.src %>/scripts',
         src: ['**/*'],
-        dest: '<%= config.dist %>/js',
+        dest: '<%= config.dist %>/_ui/js',
         ext: '.js',
         filter: 'isFile'
       }
@@ -60,7 +59,7 @@ module.exports = function(grunt) {
         options: {
           open: false,
           base: [
-            './'
+            '<%= config.dist %>'
           ]
         }
       },
@@ -68,22 +67,22 @@ module.exports = function(grunt) {
         options: {
           base: [
             'test',
-            './'
+            '<%= config.dist %>'
           ]
         }
       },
       dist: {
         options: {
           open: true,
-          base: './'
+          base: '<%= config.dist %>'
         }
       }
     },
     jade: {
       html: {
-        src: ['<%= config.src %>/templates/*.jade', '<%= config.src %>/templates/**/*.jade',
-        '<%= config.src %>/templates/!_*.jade', '<%= config.src %>/templates/**/!_*.jade'],
-        dest: '<%= config.src %>/',
+        files: {
+          '<%= config.dist %>':['<%= config.src %>/templates/*.jade', '<%= config.src %>/templates/!_*.jade']
+        },
         options: {
           client: false,
           basePath: '<%= config.src %>/templates',
@@ -113,8 +112,8 @@ module.exports = function(grunt) {
         },
         files: [
           '<%= config.src %>/*.html',
-          '<%= config.dist %>/css/{,*/}*.css',
-          '<%= config.dist %>}/js/{,*/}*.js'
+          '<%= config.dist %>/_ui/css/{,*/}*.css',
+          '<%= config.dist %>}/_ui/js/{,*/}*.js'
         ]
       }
     }

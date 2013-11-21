@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Web Components & ARIA</title>
+    <link rel="stylesheet" type="text/css" href="./_ui/css/main.css">
+    <script src="./_ui/js/CustomDropdown.js"></script>
+    <script src="./_ui/js/ShadowTemplate.js"></script>
+    <script src="./_ui/js/main.js"></script>
+  </head>
+</html>
+<body>
+  <h1>Web Components & ARIA</h1>
+  <main></main>
+  <!-- traditional DOM version-->
+  <h2>Dropdown DOM Widget</h2>
+    <div id="dropdown1" class="custom-dropdown">
+      <button id="label1" role="tab" aria-controls="linklist1">
+        <div class="accessLabel"></div><span>select option</span>
+      </button>
+      <ul id="linklist1" role="tabpanel" aria-hidden="true" aria-labeledby="label1" tabIndex="-1">
+        <li><a href="#" aria-role="option">Link 1</a></li>
+        <li><a href="#" aria-role="option">Link 2</a></li>
+        <li><a href="#" aria-role="option">Link 3</a></li>
+      </ul>
+    </div>
+  <h2>Dropdown Web Component</h2>
+  <template>
+    <style>@import './_ui/css/main.css'</style>
+    <script src="./_ui/js/InitShadowDropdown.js"></script>
+    <div>
+        <div id="dropdown2" class="custom-dropdown">
+          <button id="label2" role="tab" aria-controls="linklist2">
+            <div class="accessLabel"></div><span>select option</span>
+          </button>
+          <ul id="linklist2" role="tabpanel" aria-hidden="true" aria-labeledby="label2" tabIndex="-1">
+            <li><a href="#" aria-role="option">Link 1</a></li>
+            <li><a href="#" aria-role="option">Link 2</a></li>
+            <li><a href="#" aria-role="option">Link 3</a></li>
+          </ul>
+        </div>
+    </div>
+  </template>
+  <div class="link-list"></div>
+</body>
