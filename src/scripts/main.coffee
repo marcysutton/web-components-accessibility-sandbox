@@ -2,7 +2,5 @@ document.addEventListener 'DOMContentLoaded', (event) ->
 
   shadowTemplate = new ShadowTemplate('template', '.link-list')
 
-  customDropdown = new CustomDropdown()
-
-  document.addEventListener 'click', (event) ->
-    console.log event.target
+  elDropdowns = document.querySelectorAll('.custom-dropdown')
+  new CustomDropdown(el) for el in elDropdowns

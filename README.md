@@ -4,14 +4,17 @@ A test sandbox for the accessibility of Web Components.
 
 ## Requirements
 
-SASS, Node.js & Node CLI, Coffeescript
+Node.js, Grunt & Grunt CLI
 
 ## Instructions
 
-### SASS
-To compile sass, run the following:
-`sass --watch _ui/css/source/main.sass:_ui/css/main.css`
+### Grunt
 
-### Coffeescript
-To compile Javascript, run the following:
-`coffee -o _ui/js/ -cw _ui/js/source/`
+To set up project after installing dependencies listed above:
+`npm install`
+
+To build once:
+`grunt default`
+
+To watch files and connect to localhost:
+`grunt server`

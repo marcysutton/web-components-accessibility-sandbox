@@ -72,12 +72,6 @@ input,
 select {
   vertical-align: middle; }
 
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box; }
-
 .offscreen, .accessLabel {
   display: block;
   left: -50000px;
@@ -107,26 +101,40 @@ h1 {
 h2 {
   font-size: 1em; }
 
-.custom-dropdown {
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.custom-dropdown,
+.shadow-dropdown {
   margin: 16px 0;
   position: relative;
   width: 30%; }
-  .custom-dropdown a, .custom-dropdown button {
+  .custom-dropdown a, .custom-dropdown button,
+  .shadow-dropdown a,
+  .shadow-dropdown button {
     display: block;
     padding: 8px;
     text-decoration: none;
     width: 100%; }
-  .custom-dropdown button {
+  .custom-dropdown button,
+  .shadow-dropdown button {
     background-color: #cccccc;
     font-weight: bold; }
-    .custom-dropdown button:hover, .custom-dropdown button:focus {
+    .custom-dropdown button:hover, .custom-dropdown button:focus,
+    .shadow-dropdown button:hover,
+    .shadow-dropdown button:focus {
       color: #ff00bf; }
-    .custom-dropdown button:after {
+    .custom-dropdown button:after,
+    .shadow-dropdown button:after {
       content: "\25BC";
       display: inline-block;
       float: right;
       vertical-align: middle; }
-  .custom-dropdown ul {
+  .custom-dropdown ul,
+  .shadow-dropdown ul {
     box-shadow: 0 0.5em 1em #999999;
     background-color: white;
     display: none;
@@ -135,11 +143,15 @@ h2 {
     visibility: hidden;
     z-index: 1;
     width: 100%; }
-    .custom-dropdown ul a:hover, .custom-dropdown ul a:focus {
+    .custom-dropdown ul a:hover, .custom-dropdown ul a:focus,
+    .shadow-dropdown ul a:hover,
+    .shadow-dropdown ul a:focus {
       background-color: #ff00bf;
       color: white; }
-  .custom-dropdown.active .trigger:after {
+  .custom-dropdown.active .trigger:after,
+  .shadow-dropdown.active .trigger:after {
     content: "\25B2"; }
-  .custom-dropdown.active ul {
+  .custom-dropdown.active ul,
+  .shadow-dropdown.active ul {
     display: block;
     visibility: visible; }
