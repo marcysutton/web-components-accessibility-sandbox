@@ -13,7 +13,7 @@
 
   button
     width: 100%
-    
+
     &:after
       content: '\25BC'
       display: inline-block
@@ -30,9 +30,12 @@
     z-index: 1
     width: 100%
 
-    a:hover, a:focus
-      background-color: $link-secondary-color
-      color: $link-tertiary-color
+    a
+      display: block
+
+      &:hover, &:focus
+        background-color: $link-secondary-color
+        color: $link-tertiary-color
 
   &.active
     .trigger:after

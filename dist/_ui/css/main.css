@@ -86,9 +86,7 @@ button, .button {
   border: none;
   display: block;
   font-size: 1em;
-  padding: 8px;
   text-align: left;
-  text-decoration: none;
   -webkit-appearance: none; }
   button:hover, button:focus, .button:hover, .button:focus {
     color: #ff00bf; }
@@ -96,7 +94,9 @@ button, .button {
 a, button, .button {
   color: #830081;
   cursor: pointer;
-  display: inline-block; }
+  display: inline-block;
+  padding: 8px;
+  text-decoration: none; }
 
 h1, h2, h3, p {
   margin-bottom: 16px; }
@@ -137,11 +137,14 @@ h2 {
     visibility: hidden;
     z-index: 1;
     width: 100%; }
-    .custom-dropdown ul a:hover, .custom-dropdown ul a:focus,
-    .shadow-dropdown ul a:hover,
-    .shadow-dropdown ul a:focus {
-      background-color: #ff00bf;
-      color: white; }
+    .custom-dropdown ul a,
+    .shadow-dropdown ul a {
+      display: block; }
+      .custom-dropdown ul a:hover, .custom-dropdown ul a:focus,
+      .shadow-dropdown ul a:hover,
+      .shadow-dropdown ul a:focus {
+        background-color: #ff00bf;
+        color: white; }
   .custom-dropdown.active .trigger:after,
   .shadow-dropdown.active .trigger:after {
     content: "\25B2"; }
