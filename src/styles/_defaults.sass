@@ -19,17 +19,25 @@ body, button
   font-family: Menlo, Courier, monospace
   padding: 20px
 
-button
+button, .button
+  background-color: $list-item-bg-color
+  font-weight: bold
   border: none
+  display: block
   font-size: 1em
-  padding: 0
+  padding: $margin-unit
   text-align: left
+  text-decoration: none
   -webkit-appearance: none
 
-a, button
+  &:hover, &:focus
+    color: $link-secondary-color
+
+a, button, .button
   color: $link-primary-color
   cursor: pointer
-
+  display: inline-block
+    
 h1, h2, h3, p
   margin-bottom: $default-margin
 
@@ -38,3 +46,4 @@ h1
 
 h2
   font-size: 1em
+

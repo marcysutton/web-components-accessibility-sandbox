@@ -11,19 +11,9 @@
   position: relative
   width: 30%
 
-  a, button
-    display: block
-    padding: $margin-unit
-    text-decoration: none
-    width: 100%
-
   button
-    background-color: $list-item-bg-color
-    font-weight: bold
-
-    &:hover, &:focus
-      color: $link-secondary-color
-
+    width: 100%
+    
     &:after
       content: '\25BC'
       display: inline-block
@@ -51,3 +41,7 @@
     ul
       display: block
       visibility: visible
+
+.button-widget
+  margin: $default-margin 0
+  width: 30%

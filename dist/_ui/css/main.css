@@ -81,16 +81,23 @@ body, button {
   font-family: Menlo, Courier, monospace;
   padding: 20px; }
 
-button {
+button, .button {
+  background-color: #cccccc;
+  font-weight: bold;
   border: none;
+  display: block;
   font-size: 1em;
-  padding: 0;
+  padding: 8px;
   text-align: left;
+  text-decoration: none;
   -webkit-appearance: none; }
+  button:hover, button:focus, .button:hover, .button:focus {
+    color: #ff00bf; }
 
-a, button {
+a, button, .button {
   color: #830081;
-  cursor: pointer; }
+  cursor: pointer;
+  display: inline-block; }
 
 h1, h2, h3, p {
   margin-bottom: 16px; }
@@ -112,21 +119,9 @@ h2 {
   margin: 16px 0;
   position: relative;
   width: 30%; }
-  .custom-dropdown a, .custom-dropdown button,
-  .shadow-dropdown a,
-  .shadow-dropdown button {
-    display: block;
-    padding: 8px;
-    text-decoration: none;
-    width: 100%; }
   .custom-dropdown button,
   .shadow-dropdown button {
-    background-color: #cccccc;
-    font-weight: bold; }
-    .custom-dropdown button:hover, .custom-dropdown button:focus,
-    .shadow-dropdown button:hover,
-    .shadow-dropdown button:focus {
-      color: #ff00bf; }
+    width: 100%; }
     .custom-dropdown button:after,
     .shadow-dropdown button:after {
       content: "\25BC";
@@ -155,3 +150,7 @@ h2 {
   .shadow-dropdown.active ul {
     display: block;
     visibility: visible; }
+
+.button-widget {
+  margin: 16px 0;
+  width: 30%; }

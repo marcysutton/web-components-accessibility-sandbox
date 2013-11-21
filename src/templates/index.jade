@@ -13,12 +13,33 @@ body
   main
   
   include mixins/_dropdown.jade
+  include mixins/_div_button.jade
   
-  // traditional DOM version
-  h2 Dropdown DOM Widget
-  +dropdown("dropdown1", "label1", "linklist1")
-  
-  h2 Dropdown Web Component
-  include partials/_shadow_dropdown.jade
-  
-  .link-list
+  section
+    header
+      h1 Interactive Widgets
+        
+    article
+      // traditional DOM version
+      h2 Dropdown DOM Widget
+      +dropdown("dropdown1", "label1", "linklist1")
+      
+    article
+      // Shadow DOM version
+      h2 Dropdown Web Component
+      .shadow-element
+      include partials/_shadow_dropdown.jade
+      
+  section
+    header
+      h1 Keyboard Testing
+    
+    article.button-widget
+      h2 Div with Tab Index
+      +div_button
+      
+    article.button-widget
+      h2 Shadow DOM Div with Tab Index
+      .shadow-element
+      include partials/_shadow_keyboard_test.jade
+    

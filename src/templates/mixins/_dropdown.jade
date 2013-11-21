@@ -2,7 +2,7 @@ mixin dropdown(divID, labelID, linklistID)
   div(class="custom-dropdown", id="#{divID}")
     button(id="#{labelID}", role="tab", aria-controls="#{linklistID}")
       .accessLabel
-      span select option
+      | select option
     ul(id="#{linklistID}", role="tabpanel", aria-hidden="true", aria-labeledby="#{labelID}", tabIndex="-1")
       li
         a(href="#", aria-role="option") Link 1

@@ -5,11 +5,14 @@ HTMLElement.prototype.createShadowRoot =
 
 class ShadowTemplate
 
-  constructor: (templateSelector, hostSelector) ->
-    shadowHost = document.querySelector(hostSelector)
-    shadowTmpl = document.querySelector(templateSelector)
-
-    shadowRoot = shadowHost.createShadowRoot()
-    shadowRoot.appendChild shadowTmpl.content.cloneNode(true)
+  constructor: (hostSelector, templateSelector) ->
+    shadowHosts = document.querySelectorAll(hostSelector)
+    
+    for shadowHost in shadowHosts
+      
+      shadowTmpl = shadowHost.parentNode.querySelector(templateSelector)
+  
+      shadowRoot = shadowHost.createShadowRoot()
+      shadowRoot.appendChild shadowTmpl.content.cloneNode(true)
 
 window.ShadowTemplate = ShadowTemplate
