@@ -5,14 +5,27 @@ HTMLElement.prototype.createShadowRoot =
 
 class ShadowTemplate
 
+  el: null,
+
   constructor: (hostSelector, templateSelector) ->
     shadowHosts = document.querySelectorAll(hostSelector)
-    
+
     for shadowHost in shadowHosts
-      
-      shadowTmpl = shadowHost.parentNode.querySelector(templateSelector)
-  
-      shadowRoot = shadowHost.createShadowRoot()
-      shadowRoot.appendChild shadowTmpl.content.cloneNode(true)
+
+      @shadowTmpl = shadowHost.parentNode.querySelector(templateSelector)
+
+      shadowProto = Object.create(HTMLElement.prototype)
+      shadowProto.createdCallback = @shadowCreatedCallback(shadowHost)
+
+  shadowCreatedCallback: (host) ->
+    shadowRoot = host.createShadowRoot()
+    clone = @shadowTmpl.content.cloneNode(true)
+
+    # SD widget now works but I'd like to get this code out of here
+    dropdown = clone.querySelector('.custom-dropdown')
+    if dropdown
+      new CustomDropdown(dropdown, true)
+
+    shadowRoot.appendChild(clone)
 
 window.ShadowTemplate = ShadowTemplate
