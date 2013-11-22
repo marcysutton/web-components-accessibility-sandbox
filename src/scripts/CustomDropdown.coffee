@@ -15,13 +15,8 @@ class CustomDropdown
       @elFirstSelectItem = @elCustomDropdownUl.querySelector('a')
       @elAccessLabel = @elCustomDropdown.querySelector('.accessLabel')
 
-      console.log @elCustomDropdown
-
       # Fill screen reader label
       @updateAccessLabel @accessLabelCollapsed
-
-      # if shadow == true
-        # @customDropdownToggle()
 
       # Event bindings
       @elCustomDropdown.addEventListener 'click', @customDropdownToggle
@@ -34,8 +29,6 @@ class CustomDropdown
     customDropdownToggle(event) if event.keyCode == 27
 
   customDropdownToggle: (event) =>
-    console.log 'customDropdownToggle'
-
     ddClasslist = @elCustomDropdown.classList
 
     if ddClasslist.contains('active')
