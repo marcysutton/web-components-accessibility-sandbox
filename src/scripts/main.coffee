@@ -23,4 +23,4 @@ document.addEventListener 'DOMContentLoaded', (event) ->
   new CustomDropdown(el) for el in elDropdowns
 
 supportsCustomElements = ->
-  'register' in document
+  'register' of document
