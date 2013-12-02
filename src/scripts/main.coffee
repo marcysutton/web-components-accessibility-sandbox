@@ -1,8 +1,9 @@
 document.addEventListener 'DOMContentLoaded', (event) ->
+  init()
 
-
+init = ->
   shadowDropdownClass = 'shadow-dropdown'
-
+  
   if supportsCustomElements()
     dropdownProto = Object.create HTMLElement.prototype,
       createdCallback:
