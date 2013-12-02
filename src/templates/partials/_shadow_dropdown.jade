@@ -1,6 +1,7 @@
 include ../mixins/_dropdown.jade
 
-template.tmpl-custom-dropdown
+template
   style
     @import './_ui/css/main.css'
-  +dropdown('dropdown2', 'label2', 'linklist2')
+  div#shadowDropdown
+    +dropdown('dropdown2', 'label2', 'linklist2')
