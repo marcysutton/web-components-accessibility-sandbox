@@ -9,9 +9,11 @@ class ShadowTemplate
 
   el: null,
 
-  constructor: (hostSelector, templateSelector) ->
+  constructor: (hostSelector, templateSelector = 'template') ->
+    
     shadowHosts = document.querySelectorAll(hostSelector)
-
+    console.log document
+    
     for shadowHost in shadowHosts
 
       @shadowTmpl = shadowHost.parentNode.querySelector(templateSelector)
@@ -19,15 +21,15 @@ class ShadowTemplate
       shadowProto = Object.create(HTMLElement.prototype)
       shadowProto.createdCallback = @shadowCreatedCallback(shadowHost)
 
-  shadowCreatedCallback: (host) ->
+  shadowCreatedCallback: (host) =>
     shadowRoot = host.createShadowRoot()
-    clone = @shadowTmpl.content.cloneNode(true)
+    @clone = @shadowTmpl.content.cloneNode(true)
 
     # SD widget now works but I'd like to get this code out of here
-    dropdown = clone.querySelector('.custom-dropdown')
+    dropdown = @clone.querySelector('.custom-dropdown')
     if dropdown
       new CustomDropdown(dropdown, true)
 
-    shadowRoot.appendChild(clone)
+    shadowRoot.appendChild(@clone)
 
 module.exports = ShadowTemplate
