@@ -41,4 +41,4 @@ class CustomDropdown
       @elCustomDropdownUl.setAttribute('aria-hidden', false)
       @updateAccessLabel @accessLabelCollapsed
 
-window.CustomDropdown = CustomDropdown
+module.exports = CustomDropdown

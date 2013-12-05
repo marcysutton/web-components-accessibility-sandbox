@@ -28,4 +28,4 @@ class ShadowTemplate
 
     shadowRoot.appendChild(clone)
 
-window.ShadowTemplate = ShadowTemplate
+module.exports = ShadowTemplate

@@ -1,4 +1,6 @@
 document.addEventListener 'DOMContentLoaded', (event) ->
+ShadowTemplate = require './ShadowTemplate'
+CustomDropdown = require './CustomDropdown'
 
   shadowTemplate = new ShadowTemplate('.shadow-element', 'template')
 
