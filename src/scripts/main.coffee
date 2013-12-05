@@ -1,7 +1,7 @@
-document.addEventListener 'DOMContentLoaded', (event) ->
 ShadowTemplate = require './ShadowTemplate'
 CustomDropdown = require './CustomDropdown'
 
+document.addEventListener 'DOMContentLoaded', (event) ->
   shadowTemplate = new ShadowTemplate('.shadow-element', 'template')
 
   elDropdowns = document.querySelectorAll('.custom-dropdown')

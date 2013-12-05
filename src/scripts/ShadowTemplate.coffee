@@ -3,6 +3,8 @@ HTMLElement.prototype.createShadowRoot =
   HTMLElement.prototype.webkitCreateShadowRoot ||
   () ->
 
+CustomDropdown = require './CustomDropdown'
+
 class ShadowTemplate
 
   el: null,
