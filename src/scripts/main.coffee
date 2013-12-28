@@ -15,8 +15,6 @@ document.addEventListener 'DOMContentLoaded', (event) ->
             new ShadowDropdown(shadowDropdownName)
 
     customDropdown = document.register shadowDropdownName, prototype: dropdownProto
-  else
-    customTag = document.querySelector(shadowDropdownName)
 
     buttonProto = Object.create HTMLElement.prototype,
       createdCallback: 
@@ -24,14 +22,6 @@ document.addEventListener 'DOMContentLoaded', (event) ->
           new ShadowButton(shadowButtonName)
 
     customButton = document.register shadowButtonName, prototype: buttonProto
-
-    
-    parentEl = customTag.parentNode
-    newDiv = document.createElement('div')
-    newDiv.setAttribute('class', shadowDropdownName)
-    parentEl.appendChild(newDiv)
-
-    new ShadowDropdown(shadowDropdownSelector)
 
   elDropdowns = document.querySelectorAll('.custom-dropdown')
   new CustomDropdown(el) for el in elDropdowns
