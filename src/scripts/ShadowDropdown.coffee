@@ -1,14 +1,21 @@
+ShadowTemplate = require './ShadowTemplate'
+CustomDropdown = require './CustomDropdown'
+
 class ShadowDropdown extends ShadowTemplate
 
-  constructor: (shadowHost) ->
-    super shadowHost
+	constructor: (shadowHost) ->
+		super
 
-    console.log shadowHost
+	shadowCreatedCallback: () =>
+		super
 
-    # new CustomDropdown(@clone.querySelector shadowHost)
-    # SD widget now works but I'd like to get this code out of here
-    # dropdown = @clone.querySelector(shadowHost)
-    # if dropdown
-    #   new CustomDropdown(dropdown)
+		@shadowChildEl = @clone.querySelector '.custom-dropdown'
+
+		new CustomDropdown @shadowChildEl
+
+		@attachClone()
+
+	attachClone: () ->
+		super
 
 module.exports = ShadowDropdown
