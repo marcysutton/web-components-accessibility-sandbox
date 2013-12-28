@@ -4,22 +4,22 @@ CustomDropdown = require './CustomDropdown'
 
 document.addEventListener 'DOMContentLoaded', (event) ->
 
-  shadowDropdownClass = 'shadow-dropdown'
-  shadowDropdownSelector = ".#{shadowDropdownClass}"
+  shadowDropdownName = 'shadow-dropdown'
+  shadowDropdownSelector = ".#{shadowDropdownName}"
 
   if supportsCustomElements()
     dropdownProto = Object.create HTMLElement.prototype,
       createdCallback:
           value: ->
-            new ShadowDropdown(shadowDropdownSelector)
+            new ShadowDropdown(shadowDropdownName)
 
-    customDropdown = document.register shadowDropdownClass, prototype: dropdownProto
+    customDropdown = document.register shadowDropdownName, prototype: dropdownProto
   else
-    customTag = document.querySelector(shadowDropdownClass)
+    customTag = document.querySelector(shadowDropdownName)
     
     parentEl = customTag.parentNode
     newDiv = document.createElement('div')
-    newDiv.setAttribute('class', shadowDropdownClass)
+    newDiv.setAttribute('class', shadowDropdownName)
     parentEl.appendChild(newDiv)
 
     new ShadowDropdown(shadowDropdownSelector)
