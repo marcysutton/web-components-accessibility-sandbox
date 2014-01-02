@@ -9,6 +9,8 @@
 
 module.exports = function(grunt) {
 
+  require('load-grunt-tasks')(grunt);
+  
   // Project configuration.
   grunt.initConfig({
     config: {
@@ -18,21 +20,8 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         files: {
-          '<%= config.dist %>/_ui/css/main.css' : '<%= config.src %>/styles/main.sass'
+          '<%= config.dist %>/styles/main.css' : '<%= config.src %>/styles/main.sass'
         }
-      }
-    },
-    coffee: {
-      options: {
-        bare: false
-      },
-      compile: {
-        expand: 'yes',
-        cwd: '<%= config.src %>/scripts',
-        src: ['**/*'],
-        dest: '<%= config.dist %>/_ui/js',
-        ext: '.js',
-        filter: 'isFile'
       }
     },
     clean: {
@@ -47,6 +36,16 @@ module.exports = function(grunt) {
         }]
       },
       server: '.tmp'
+    },
+    browserify: {
+      basic: {
+        src: ['<%= config.src %>/scripts/{,*/}*.js', '<%= config.src %>/scripts/{,*/}*.coffee'],
+        options: {
+          transform: ['coffeeify'],
+          extensions: ['.js', '.coffee']
+        },
+        dest: '<%= config.dist %>/scripts/main.js'
+      }
     },
     connect: {
       options: {
@@ -67,7 +66,7 @@ module.exports = function(grunt) {
         options: {
           base: [
             'test',
-            '<%= config.dist %>'
+            '<%= config.src %>'
           ]
         }
       },
@@ -93,7 +92,7 @@ module.exports = function(grunt) {
     watch: {
       coffee: {
         files: ['<%= config.src %>/scripts/{,*/}*.coffee'],
-        tasks: ['coffee']
+        tasks: ['browserify']
       },
       sass: {
         files: ['<%= config.src %>/styles/{,*/}/*.{scss,sass}'],
@@ -111,24 +110,40 @@ module.exports = function(grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= config.src %>/*.html',
-          '<%= config.dist %>/_ui/css/{,*/}*.css',
-          '<%= config.dist %>}/_ui/js/{,*/}*.js'
+          '<%= config.dist %>/*.html',
+          '<%= config.dist %>}/styles/{,*/}*.css',
+          '{.tmp,<%= config.dist %>}/scripts/{,*/}*.js',
+          '<%= config.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
+    },   
+    concurrent: {
+      server: [
+        'sass',
+        'browserify',
+        'jade'
+      ],
+      test: [
+        'sass'
+      ],
+      dist: [
+        'sass',
+        'browserify',
+        'jade'
+      ]
     }
   });
+  grunt.registerTask('server', function (target) {
+    grunt.task.run([
+      'clean',
+      'concurrent:server',
+      'connect:livereload',
+      'watch'
+    ]);
+  });
 
-  // // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-coffee');
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-jade');
-  grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-
-  // By default, lint and run all tests.
-  grunt.registerTask('server', ['default', 'connect:livereload', 'watch']);
-
-  grunt.registerTask('default', ['clean','coffee', 'sass', 'jade']);
+  grunt.registerTask('default', [
+    'clean',
+    'concurrent:dist'
+  ]);
 };
