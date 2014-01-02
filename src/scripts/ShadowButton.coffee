@@ -5,8 +5,6 @@ class ShadowButton extends ShadowTemplate
 	constructor: (shadowHost) ->
 		super
 
-		console.log shadowHost
-		
 	shadowCreatedCallback: () =>
 		super
 
