@@ -18,6 +18,7 @@ class ShadowTemplate
 
   shadowCreatedCallback: () =>
     @shadowRoot = @shadowHost.createShadowRoot()
+    @shadowRoot.applyAuthorStyles = true
     @clone = @shadowTmpl.content.cloneNode(true)
 
   attachClone: () ->
