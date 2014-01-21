@@ -14,17 +14,17 @@ document.addEventListener 'DOMContentLoaded', (event) ->
           value: ->
             new ShadowDropdown(shadowDropdownName)
 
-    customDropdown = document.register shadowDropdownName, prototype: dropdownProto
+    customDropdown = document.registerElement shadowDropdownName, prototype: dropdownProto
 
     buttonProto = Object.create HTMLElement.prototype,
-      createdCallback: 
+      createdCallback:
         value: ->
           new ShadowButton(shadowButtonName)
 
-    customButton = document.register shadowButtonName, prototype: buttonProto
+    customButton = document.registerElement shadowButtonName, prototype: buttonProto
 
   elDropdowns = document.querySelectorAll('.custom-dropdown')
   new CustomDropdown(el) for el in elDropdowns
 
 supportsCustomElements = ->
-  'register' of document
+  'registerElement' of document
