@@ -1,0 +1,42 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title Web Components & ARIA
+    link(rel="stylesheet", type="text/css", href="./styles/main.css")
+    script(src="./scripts/main.js")
+
+body
+  header
+    h1 Web Components & ARIA
+
+  main
+    include mixins/_dropdown.jade
+    include mixins/_div_button.jade
+    section
+      header
+        h1 Interactive Widgets
+
+      article
+        // traditional DOM version
+        h2 Dropdown DOM Widget
+        +dropdown("dropdown1", "label1", "linklist1")
+
+      article
+        // Shadow DOM version
+        h2 Dropdown Web Component
+        include partials/_shadow_dropdown.jade
+        shadow-dropdown
+
+    section
+      header
+        h1 Keyboard Testing
+
+      article.button-widget
+        h2 Div with Tab Index
+        +div_button
+
+      article.button-widget
+        h2 Shadow DOM Div with Tab Index
+        include partials/_shadow_keyboard_test.jade
+        div-button

@@ -1,0 +1,6 @@
+.DS_Store
+log/*.log
+tmp/**
+node_modules/
+dist/
+.sass-cache

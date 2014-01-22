@@ -1,0 +1,49 @@
+$margin-unit: 8px
+$default-margin: $margin-unit * 2
+
+
+$link-primary-color: #830081
+$link-secondary-color: #FF00BF
+$link-tertiary-color: #fff
+
+$list-item-bg-color: #ccc
+
+$shadow-color: #999
+
+.offscreen, .accessLabel
+  display: block
+  left: -50000px
+  position: absolute
+
+body, button
+  font-family: Menlo, Courier, monospace
+  padding: 20px
+
+button, .button
+  background-color: $list-item-bg-color
+  font-weight: bold
+  border: none
+  display: block
+  font-size: 1em
+  text-align: left
+  -webkit-appearance: none
+
+  &:hover, &:focus
+    color: $link-secondary-color
+
+a, button, .button
+  color: $link-primary-color
+  cursor: pointer
+  display: inline-block
+  padding: $margin-unit
+  text-decoration: none
+
+h1, h2, h3, p
+  margin-bottom: $default-margin
+
+h1
+  font-size: 1.5em
+
+h2
+  font-size: 1em
+

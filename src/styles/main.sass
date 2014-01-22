@@ -1,0 +1,51 @@
+@import 'reset'
+@import 'mixins'
+@import 'defaults'
+
+*
+  +box-sizing
+
+.custom-dropdown,
+.shadow-dropdown
+  margin: $default-margin 0
+  min-width: 280px
+  position: relative
+  width: 30%
+
+  button
+    width: 100%
+
+    &:after
+      content: '\25BC'
+      display: inline-block
+      float: right
+      vertical-align: middle
+
+  ul
+    +box-shadow
+    background-color: #fff
+    display: none
+    list-style: none
+    position: absolute
+    visibility: hidden
+    z-index: 1
+    width: 100%
+
+    a
+      display: block
+
+      &:hover, &:focus
+        background-color: $link-secondary-color
+        color: $link-tertiary-color
+
+  &.active
+    .trigger:after
+      content: '\25B2'
+
+    ul
+      display: block
+      visibility: visible
+
+.button-widget
+  margin: $default-margin 0
+  width: 30%
