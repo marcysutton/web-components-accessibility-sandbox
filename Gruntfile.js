@@ -21,7 +21,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         files: {
-          '<%= config.dist %>/styles/main.css' : '<%= config.src %>/assets/styles/main.sass'
+          '<%= config.dist %>/styles/main.css' : '<%= config.src %>/styles/main.sass'
         }
       }
     },
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
     },
     browserify: {
       basic: {
-        src: ['<%= config.src %>/assets/scripts/{,*/}*.js', '<%= config.src %>/assets/scripts/{,*/}*.coffee'],
+        src: ['<%= config.src %>/scripts/{,*/}*.js', '<%= config.src %>/scripts/{,*/}*.coffee'],
         options: {
           transform: ['coffeeify'],
           extensions: ['.js', '.coffee']
@@ -92,11 +92,11 @@ module.exports = function(grunt) {
     },
     watch: {
       coffee: {
-        files: ['<%= config.src %>/assets/scripts/{,*/}*.coffee'],
+        files: ['<%= config.src %>/scripts/{,*/}*.coffee'],
         tasks: ['browserify']
       },
       sass: {
-        files: ['<%= config.src %>/assets/styles/{,*/}/*.{scss,sass}'],
+        files: ['<%= config.src %>/styles/{,*/}/*.{scss,sass}'],
         tasks: ['sass']
       },
       jade: {
