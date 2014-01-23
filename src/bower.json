@@ -1,0 +1,20 @@
+{
+  "name": "Web-Components-Accessibility",
+  "version": "0.0.0",
+  "homepage": "https://github.com/marcysutton/web-components-accessibility",
+  "authors": [
+    "Marcy Sutton <marcy@substantial.com>"
+  ],
+  "description": "A research sandbox for the accessibility of web components",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "platform": "Polymer/platform#~0.1.3"
+  }
+}

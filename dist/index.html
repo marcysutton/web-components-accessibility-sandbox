@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Web Components & ARIA</title>
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+    <script src="./scripts/main.js"></script>
+  </head>
+</html>
+<body>
+  <header>
+    <h1>Web Components & ARIA</h1>
+  </header>
+  <main>
+    <section>
+      <header>
+        <h1>Interactive Widgets</h1>
+      </header>
+      <article>
+        <!-- traditional DOM version-->
+        <h2>Dropdown DOM Widget</h2>
+            <div id="dropdown1" class="custom-dropdown">
+              <button id="label1" role="tab" aria-controls="linklist1">
+                <div class="accessLabel"></div>select option
+              </button>
+              <ul id="linklist1" role="tabpanel" aria-hidden="true" aria-labeledby="label1" tabIndex="-1">
+                <li><a href="#" aria-role="option">Link 1</a></li>
+                <li><a href="#" aria-role="option">Link 2</a></li>
+                <li><a href="#" aria-role="option">Link 3</a></li>
+              </ul>
+            </div>
+      </article>
+      <article>
+        <!-- Shadow DOM version-->
+        <h2>Dropdown Web Component</h2>
+        <template>
+          <div id="shadowDropdown">
+                    <div id="dropdown2" class="custom-dropdown">
+                      <button id="label2" role="tab" aria-controls="linklist2">
+                        <div class="accessLabel"></div>select option
+                      </button>
+                      <ul id="linklist2" role="tabpanel" aria-hidden="true" aria-labeledby="label2" tabIndex="-1">
+                        <li><a href="#" aria-role="option">Link 1</a></li>
+                        <li><a href="#" aria-role="option">Link 2</a></li>
+                        <li><a href="#" aria-role="option">Link 3</a></li>
+                      </ul>
+                    </div>
+          </div>
+        </template>
+        <shadow-dropdown></shadow-dropdown>
+      </article>
+    </section>
+    <section>
+      <header>
+        <h1>Keyboard Testing</h1>
+      </header>
+      <article class="button-widget">
+        <h2>Div with Tab Index</h2>
+            <div tabIndex="0" class="button">
+               
+              button
+            </div>
+      </article>
+      <article class="button-widget">
+        <h2>Shadow DOM Div with Tab Index</h2>
+        <template>
+                  <div tabIndex="0" class="button">
+                     
+                    button
+                  </div>
+        </template>
+        <div-button></div-button>
+      </article>
+    </section>
+  </main>
+</body>
