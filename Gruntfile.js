@@ -10,7 +10,7 @@
 module.exports = function(grunt) {
 
   require('load-grunt-tasks')(grunt);
-  
+
   // Project configuration.
   grunt.initConfig({
     config: {
@@ -116,12 +116,22 @@ module.exports = function(grunt) {
           '<%= config.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
-    },   
+    },
+    // Put files not handled in other tasks here
+    copy: {
+      dependencies: {
+        expand: true,
+        cwd: '<%= config.src %>',
+        dest: '<%= config.dist %>',
+        src: ['bower_components/platform/platform.js']
+      }
+    },
     concurrent: {
       server: [
         'sass',
         'browserify',
-        'jade'
+        'jade',
+        'copy:dependencies'
       ],
       test: [
         'sass'
