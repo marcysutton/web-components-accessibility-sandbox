@@ -1,20 +1,24 @@
-# Web Components & Accessibility
+Web Components & Accessibility
+===========
 
-A test sandbox for the accessibility of Web Components.
+A test sandbox for the accessibility of Web Components by Marcy Sutton.
 
-## Requirements
+##Project Setup##
 
-Node.js, Grunt & Grunt CLI
+To work with this code-base, you must have [Node.js](http://nodejs.org/), [Ruby](http://ruby-lang.org/), [Grunt](http://gruntjs.com/getting-started) and [Bower](http://bower.io/) installed.
 
-## Instructions
+To install the Grunt CLI globally, run:
 
-### Grunt
+`npm install -g grunt-cli`
 
-To set up project after installing dependencies listed above:
+To install the required tools for this project, run:
+
 `npm install`
+
+`cd src && bower install`
+
+To run the site after all Node dependencies have downloaded, run:
+`grunt server`
 
 To build once:
 `grunt default`
-
-To watch files and connect to localhost:
-`grunt server`
