@@ -3,14 +3,14 @@ html(lang="en")
   head
     meta(charset="utf-8")
     title Web Components & ARIA
-    link(rel="stylesheet", type="text/css", href="./styles/main.css")
+    link(rel="stylesheet", type="text/css", href="./assets/styles/main.css")
 
 body
   header
     h1 Web Components & ARIA
   main
-    include mixins/_dropdown.jade
-    include mixins/_div_button.jade
+    include templates/mixins/_dropdown.jade
+    include templates/mixins/_div_button.jade
     section
       header
         h1 Interactive Widgets
@@ -23,7 +23,7 @@ body
       article
         // Shadow DOM version
         h2 Dropdown Web Component
-        include partials/_shadow_dropdown.jade
+        include templates/partials/_shadow_dropdown.jade
         shadow-dropdown
 
     section
@@ -36,8 +36,8 @@ body
 
       article.button-widget
         h2 Shadow DOM Div with Tab Index
-        include partials/_shadow_keyboard_test.jade
+        include templates/partials/_shadow_keyboard_test.jade
         div-button
 
-  script(src="./bower_components/platform/platform.js")
-  script(src="./scripts/main.js")
+  script(src="./assets/bower_components/platform/platform.js")
+  script(src="./assets/scripts/main.js")

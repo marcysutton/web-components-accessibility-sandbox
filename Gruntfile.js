@@ -15,12 +15,13 @@ module.exports = function(grunt) {
   grunt.initConfig({
     config: {
       src: 'src',
-      dist: './dist'
+      dist: './assets',
+      root: './'
     },
     sass: {
       dist: {
         files: {
-          '<%= config.dist %>/styles/main.css' : '<%= config.src %>/styles/main.sass'
+          '<%= config.dist %>/styles/main.css' : '<%= config.src %>/assets/styles/main.sass'
         }
       }
     },
@@ -39,7 +40,7 @@ module.exports = function(grunt) {
     },
     browserify: {
       basic: {
-        src: ['<%= config.src %>/scripts/{,*/}*.js', '<%= config.src %>/scripts/{,*/}*.coffee'],
+        src: ['<%= config.src %>/assets/scripts/{,*/}*.js', '<%= config.src %>/assets/scripts/{,*/}*.coffee'],
         options: {
           transform: ['coffeeify'],
           extensions: ['.js', '.coffee']
@@ -58,7 +59,7 @@ module.exports = function(grunt) {
         options: {
           open: false,
           base: [
-            '<%= config.dist %>'
+            '<%= config.root %>'
           ]
         }
       },
@@ -80,26 +81,27 @@ module.exports = function(grunt) {
     jade: {
       html: {
         files: {
-          '<%= config.dist %>':['<%= config.src %>/templates/*.jade', '<%= config.src %>/templates/!_*.jade']
+          '<%= config.root %>':['<%= config.src %>/*.jade','<%= config.src %>/templates/*.jade']
         },
         options: {
           client: false,
-          basePath: '<%= config.src %>/templates',
+          basePath: '<%= config.src %>',
           pretty: true
         }
       }
     },
     watch: {
       coffee: {
-        files: ['<%= config.src %>/scripts/{,*/}*.coffee'],
+        files: ['<%= config.src %>/assets/scripts/{,*/}*.coffee'],
         tasks: ['browserify']
       },
       sass: {
-        files: ['<%= config.src %>/styles/{,*/}/*.{scss,sass}'],
+        files: ['<%= config.src %>/assets/styles/{,*/}/*.{scss,sass}'],
         tasks: ['sass']
       },
       jade: {
         files: [
+          '<%= config.src %>/*.jade',
           '<%= config.src %>/templates/*.jade',
           '<%= config.src %>/templates/**/*.jade'
         ],
