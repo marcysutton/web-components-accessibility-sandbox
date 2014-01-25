@@ -72,7 +72,8 @@ select {
   vertical-align: middle; }
 
 template {
-  display: none !important; }
+  display: none !important;
+  visibility: hidden !important; }
 
 .offscreen, .accessLabel {
   display: block;
