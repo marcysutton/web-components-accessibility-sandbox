@@ -6,7 +6,8 @@ ShadowButton = require './ShadowButton'
 document.addEventListener 'DOMContentLoaded', (event) ->
 
   shadowDropdownName = 'shadow-dropdown'
-  shadowButtonName = 'div-button'
+  shadowDivButtonName = 'div-button'
+  shadowButtonName = 'button-button'
 
   if supportsCustomElements()
     dropdownProto = Object.create HTMLElement.prototype,
@@ -16,11 +17,17 @@ document.addEventListener 'DOMContentLoaded', (event) ->
 
     customDropdown = document.registerElement shadowDropdownName, prototype: dropdownProto
 
+    divButtonProto = Object.create HTMLElement.prototype,
+      createdCallback:
+        value: ->
+          new ShadowButton(shadowDivButtonName)
+
     buttonProto = Object.create HTMLElement.prototype,
       createdCallback:
         value: ->
           new ShadowButton(shadowButtonName)
 
+    customDivButton = document.registerElement shadowDivButtonName, prototype: divButtonProto
     customButton = document.registerElement shadowButtonName, prototype: buttonProto
 
   elDropdowns = document.querySelectorAll('.custom-dropdown')

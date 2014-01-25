@@ -179,9 +179,10 @@ CustomDropdown = require('./CustomDropdown');
 ShadowButton = require('./ShadowButton');
 
 document.addEventListener('DOMContentLoaded', function(event) {
-  var buttonProto, customButton, customDropdown, dropdownProto, el, elDropdowns, shadowButtonName, shadowDropdownName, _i, _len, _results;
+  var buttonProto, customButton, customDivButton, customDropdown, divButtonProto, dropdownProto, el, elDropdowns, shadowButtonName, shadowDivButtonName, shadowDropdownName, _i, _len, _results;
   shadowDropdownName = 'shadow-dropdown';
-  shadowButtonName = 'div-button';
+  shadowDivButtonName = 'div-button';
+  shadowButtonName = 'button-button';
   if (supportsCustomElements()) {
     dropdownProto = Object.create(HTMLElement.prototype, {
       createdCallback: {
@@ -193,12 +194,22 @@ document.addEventListener('DOMContentLoaded', function(event) {
     customDropdown = document.registerElement(shadowDropdownName, {
       prototype: dropdownProto
     });
+    divButtonProto = Object.create(HTMLElement.prototype, {
+      createdCallback: {
+        value: function() {
+          return new ShadowButton(shadowDivButtonName);
+        }
+      }
+    });
     buttonProto = Object.create(HTMLElement.prototype, {
       createdCallback: {
         value: function() {
           return new ShadowButton(shadowButtonName);
         }
       }
+    });
+    customDivButton = document.registerElement(shadowDivButtonName, {
+      prototype: divButtonProto
     });
     customButton = document.registerElement(shadowButtonName, {
       prototype: buttonProto

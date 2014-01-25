@@ -158,6 +158,14 @@ h2 {
     display: block;
     visibility: visible; }
 
-.button-widget {
-  margin: 16px 0;
-  width: 30%; }
+.button-group {
+  background-color: #f2f2f2;
+  clear: both;
+  margin-bottom: 16px;
+  max-width: 400px; }
+  .button-group article.button-widget {
+    display: inline-block;
+    padding: 8px;
+    margin: 16px 10% 0;
+    vertical-align: bottom;
+    width: 40%; }

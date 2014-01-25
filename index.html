@@ -51,25 +51,34 @@
     </section>
     <section>
       <header>
-        <h1>Keyboard Testing</h1>
+        <h1>Buttons</h1>
       </header>
-      <article class="button-widget">
-        <h2>Div with Tab Index</h2>
-            <div tabIndex="0" class="button">
-               
-              button
-            </div>
-      </article>
-      <article class="button-widget">
-        <h2>Shadow DOM Div with Tab Index</h2>
-        <template>
-                  <div tabIndex="0" class="button">
-                     
-                    button
-                  </div>
-        </template>
-        <div-button></div-button>
-      </article>
+      <div class="button-group">
+        <article class="button-widget">
+          <h2>Div with Tab Index</h2>
+              <div tabIndex="0" class="button">div</div>
+        </article>
+        <article class="button-widget">
+          <h2>Shadow DOM Div with Tab Index</h2>
+          <template>
+                      <div tabIndex="0" class="button">div</div>
+          </template>
+          <div-button></div-button>
+        </article>
+      </div>
+      <div class="button-group">
+        <article class="button-widget">
+          <h2>Button</h2>
+              <button>button</button>
+        </article>
+        <article class="button-widget">
+          <h2>Shadow DOM Button</h2>
+          <template>
+                      <button>button</button>
+          </template>
+          <button-button></button-button>
+        </article>
+      </div>
     </section>
   </main>
   <script src="./assets/bower_components/platform/platform.js"></script>
