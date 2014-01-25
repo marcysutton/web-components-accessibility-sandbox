@@ -8,9 +8,22 @@
 </html>
 <body>
   <header>
-    <h1>Web Components & ARIA</h1>
+    <h1>Web Components & Accessibility Sandbox</h1>
   </header>
   <main>
+    <section>
+      <header>
+        <h1>Shadow DOM Content Test</h1>
+      </header>
+      <template>
+        <div class="article-inner-wrapper">
+          <h2><a href="http://baltimore.craigslist.org/crg/4298347086.html">DRIVER WITH 4 WHEEL DRIVE VEHICLE NEEDED FOR EMERGENCY TACO BELL RUN</a></h2>
+          <p>It's a snowy night. You have a few drinks, play some video games and then it hits you–an overwhelming desire for a taco.</p>
+          <p>That's what apparently happened to one Baltimorean last night who posted on Craigslist.</p>
+        </div>
+      </template>
+      <taco-article></taco-article>
+    </section>
     <section>
       <header>
         <h1>Interactive Widgets</h1>
@@ -51,25 +64,34 @@
     </section>
     <section>
       <header>
-        <h1>Keyboard Testing</h1>
+        <h1>Buttons</h1>
       </header>
-      <article class="button-widget">
-        <h2>Div with Tab Index</h2>
-            <div tabIndex="0" class="button">
-               
-              button
-            </div>
-      </article>
-      <article class="button-widget">
-        <h2>Shadow DOM Div with Tab Index</h2>
-        <template>
-                  <div tabIndex="0" class="button">
-                     
-                    button
-                  </div>
-        </template>
-        <div-button></div-button>
-      </article>
+      <div class="button-group">
+        <article class="button-widget">
+          <h2>Div with Tab Index</h2>
+              <div tabIndex="0" class="button">div</div>
+        </article>
+        <article class="button-widget">
+          <h2>Shadow DOM Div with Tab Index</h2>
+          <template>
+                      <div tabIndex="0" class="button">div</div>
+          </template>
+          <div-button></div-button>
+        </article>
+      </div>
+      <div class="button-group">
+        <article class="button-widget">
+          <h2>Button</h2>
+              <button>button</button>
+        </article>
+        <article class="button-widget">
+          <h2>Shadow DOM Button</h2>
+          <template>
+                      <button>button</button>
+          </template>
+          <button-button></button-button>
+        </article>
+      </div>
     </section>
   </main>
   <script src="./assets/bower_components/platform/platform.js"></script>

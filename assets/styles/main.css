@@ -72,7 +72,8 @@ select {
   vertical-align: middle; }
 
 template {
-  display: none !important; }
+  display: none !important;
+  visibility: hidden !important; }
 
 .offscreen, .accessLabel {
   display: block;
@@ -94,7 +95,7 @@ button, .button {
   button:hover, button:focus, .button:hover, .button:focus {
     color: #ff00bf; }
 
-a, button, .button {
+.custom-dropdown a, button, .button {
   color: #830081;
   cursor: pointer;
   display: inline-block;
@@ -102,6 +103,7 @@ a, button, .button {
   text-decoration: none; }
 
 h1, h2, h3, p {
+  line-height: 1.25em;
   margin-bottom: 16px; }
 
 h1 {
@@ -157,6 +159,14 @@ h2 {
     display: block;
     visibility: visible; }
 
-.button-widget {
-  margin: 16px 0;
-  width: 30%; }
+.button-group, .article-inner-wrapper {
+  background-color: #f2f2f2;
+  clear: both;
+  padding: 16px;
+  margin-bottom: 16px;
+  max-width: 400px; }
+  .button-group article.button-widget, .article-inner-wrapper article.button-widget {
+    display: inline-block;
+    margin-right: 16px;
+    vertical-align: bottom;
+    width: 40%; }

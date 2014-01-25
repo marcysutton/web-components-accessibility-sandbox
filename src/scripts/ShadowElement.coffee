@@ -1,6 +1,6 @@
 ShadowTemplate = require './ShadowTemplate'
 
-class ShadowButton extends ShadowTemplate
+class ShadowElement extends ShadowTemplate
 
 	constructor: (shadowHost) ->
 		super
@@ -13,4 +13,4 @@ class ShadowButton extends ShadowTemplate
 	attachClone: () ->
 		super
 
-module.exports = ShadowButton
+module.exports = ShadowElement

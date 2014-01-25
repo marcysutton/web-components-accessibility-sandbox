@@ -1,14 +1,21 @@
 ShadowTemplate = require './ShadowTemplate'
 ShadowDropdown = require './ShadowDropdown'
 CustomDropdown = require './CustomDropdown'
-ShadowButton = require './ShadowButton'
+ShadowElement = require './ShadowElement'
 
 document.addEventListener 'DOMContentLoaded', (event) ->
 
+  shadowArticleName = 'taco-article'
   shadowDropdownName = 'shadow-dropdown'
-  shadowButtonName = 'div-button'
+  shadowDivButtonName = 'div-button'
+  shadowButtonName = 'button-button'
 
   if supportsCustomElements()
+    tacoArticleProto = Object.create HTMLElement.prototype,
+      createdCallback:
+        value: ->
+          new ShadowElement(shadowArticleName)
+
     dropdownProto = Object.create HTMLElement.prototype,
       createdCallback:
           value: ->
@@ -16,11 +23,18 @@ document.addEventListener 'DOMContentLoaded', (event) ->
 
     customDropdown = document.registerElement shadowDropdownName, prototype: dropdownProto
 
+    divButtonProto = Object.create HTMLElement.prototype,
+      createdCallback:
+        value: ->
+          new ShadowElement(shadowDivButtonName)
+
     buttonProto = Object.create HTMLElement.prototype,
       createdCallback:
         value: ->
-          new ShadowButton(shadowButtonName)
+          new ShadowElement(shadowButtonName)
 
+    tacoArticle = document.registerElement shadowArticleName, prototype: tacoArticleProto
+    customDivButton = document.registerElement shadowDivButtonName, prototype: divButtonProto
     customButton = document.registerElement shadowButtonName, prototype: buttonProto
 
   elDropdowns = document.querySelectorAll('.custom-dropdown')
