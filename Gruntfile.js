@@ -113,8 +113,8 @@ module.exports = function(grunt) {
         },
         files: [
           '<%= config.root %>/*.html',
-          '<%= config.dist %>}/styles/{,*/}*.css',
-          '{.tmp,<%= config.dist %>}/scripts/{,*/}*.js',
+          '<%= config.dist %>/styles/*.css',
+          '<%= config.dist %>/scripts/{,*/}*.js',
           '<%= config.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
