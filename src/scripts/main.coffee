@@ -1,7 +1,7 @@
 ShadowTemplate = require './ShadowTemplate'
 ShadowDropdown = require './ShadowDropdown'
 CustomDropdown = require './CustomDropdown'
-ShadowButton = require './ShadowButton'
+ShadowElement = require './ShadowElement'
 
 document.addEventListener 'DOMContentLoaded', (event) ->
 
@@ -20,12 +20,12 @@ document.addEventListener 'DOMContentLoaded', (event) ->
     divButtonProto = Object.create HTMLElement.prototype,
       createdCallback:
         value: ->
-          new ShadowButton(shadowDivButtonName)
+          new ShadowElement(shadowDivButtonName)
 
     buttonProto = Object.create HTMLElement.prototype,
       createdCallback:
         value: ->
-          new ShadowButton(shadowButtonName)
+          new ShadowElement(shadowButtonName)
 
     customDivButton = document.registerElement shadowDivButtonName, prototype: divButtonProto
     customButton = document.registerElement shadowButtonName, prototype: buttonProto
