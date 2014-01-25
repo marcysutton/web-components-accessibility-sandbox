@@ -62,38 +62,6 @@ module.exports = CustomDropdown;
 
 
 },{}],2:[function(require,module,exports){
-var ShadowButton, ShadowTemplate,
-  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
-  __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
-
-ShadowTemplate = require('./ShadowTemplate');
-
-ShadowButton = (function(_super) {
-  __extends(ShadowButton, _super);
-
-  function ShadowButton(shadowHost) {
-    this.shadowCreatedCallback = __bind(this.shadowCreatedCallback, this);
-    ShadowButton.__super__.constructor.apply(this, arguments);
-  }
-
-  ShadowButton.prototype.shadowCreatedCallback = function() {
-    ShadowButton.__super__.shadowCreatedCallback.apply(this, arguments);
-    return this.attachClone();
-  };
-
-  ShadowButton.prototype.attachClone = function() {
-    return ShadowButton.__super__.attachClone.apply(this, arguments);
-  };
-
-  return ShadowButton;
-
-})(ShadowTemplate);
-
-module.exports = ShadowButton;
-
-
-},{"./ShadowTemplate":4}],3:[function(require,module,exports){
 var CustomDropdown, ShadowDropdown, ShadowTemplate,
   __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
   __hasProp = {}.hasOwnProperty,
@@ -129,7 +97,39 @@ ShadowDropdown = (function(_super) {
 module.exports = ShadowDropdown;
 
 
-},{"./CustomDropdown":1,"./ShadowTemplate":4}],4:[function(require,module,exports){
+},{"./CustomDropdown":1,"./ShadowTemplate":4}],3:[function(require,module,exports){
+var ShadowElement, ShadowTemplate,
+  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+  __hasProp = {}.hasOwnProperty,
+  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+
+ShadowTemplate = require('./ShadowTemplate');
+
+ShadowElement = (function(_super) {
+  __extends(ShadowElement, _super);
+
+  function ShadowElement(shadowHost) {
+    this.shadowCreatedCallback = __bind(this.shadowCreatedCallback, this);
+    ShadowElement.__super__.constructor.apply(this, arguments);
+  }
+
+  ShadowElement.prototype.shadowCreatedCallback = function() {
+    ShadowElement.__super__.shadowCreatedCallback.apply(this, arguments);
+    return this.attachClone();
+  };
+
+  ShadowElement.prototype.attachClone = function() {
+    return ShadowElement.__super__.attachClone.apply(this, arguments);
+  };
+
+  return ShadowElement;
+
+})(ShadowTemplate);
+
+module.exports = ShadowElement;
+
+
+},{"./ShadowTemplate":4}],4:[function(require,module,exports){
 var ShadowTemplate,
   __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
@@ -168,7 +168,7 @@ module.exports = ShadowTemplate;
 
 
 },{}],5:[function(require,module,exports){
-var CustomDropdown, ShadowButton, ShadowDropdown, ShadowTemplate, supportsCustomElements;
+var CustomDropdown, ShadowDropdown, ShadowElement, ShadowTemplate, supportsCustomElements;
 
 ShadowTemplate = require('./ShadowTemplate');
 
@@ -176,14 +176,22 @@ ShadowDropdown = require('./ShadowDropdown');
 
 CustomDropdown = require('./CustomDropdown');
 
-ShadowButton = require('./ShadowButton');
+ShadowElement = require('./ShadowElement');
 
 document.addEventListener('DOMContentLoaded', function(event) {
-  var buttonProto, customButton, customDivButton, customDropdown, divButtonProto, dropdownProto, el, elDropdowns, shadowButtonName, shadowDivButtonName, shadowDropdownName, _i, _len, _results;
+  var buttonProto, customButton, customDivButton, customDropdown, divButtonProto, dropdownProto, el, elDropdowns, shadowArticleName, shadowButtonName, shadowDivButtonName, shadowDropdownName, tacoArticle, tacoArticleProto, _i, _len, _results;
+  shadowArticleName = 'taco-article';
   shadowDropdownName = 'shadow-dropdown';
   shadowDivButtonName = 'div-button';
   shadowButtonName = 'button-button';
   if (supportsCustomElements()) {
+    tacoArticleProto = Object.create(HTMLElement.prototype, {
+      createdCallback: {
+        value: function() {
+          return new ShadowElement(shadowArticleName);
+        }
+      }
+    });
     dropdownProto = Object.create(HTMLElement.prototype, {
       createdCallback: {
         value: function() {
@@ -197,16 +205,19 @@ document.addEventListener('DOMContentLoaded', function(event) {
     divButtonProto = Object.create(HTMLElement.prototype, {
       createdCallback: {
         value: function() {
-          return new ShadowButton(shadowDivButtonName);
+          return new ShadowElement(shadowDivButtonName);
         }
       }
     });
     buttonProto = Object.create(HTMLElement.prototype, {
       createdCallback: {
         value: function() {
-          return new ShadowButton(shadowButtonName);
+          return new ShadowElement(shadowButtonName);
         }
       }
+    });
+    tacoArticle = document.registerElement(shadowArticleName, {
+      prototype: tacoArticleProto
     });
     customDivButton = document.registerElement(shadowDivButtonName, {
       prototype: divButtonProto
@@ -229,5 +240,5 @@ supportsCustomElements = function() {
 };
 
 
-},{"./CustomDropdown":1,"./ShadowButton":2,"./ShadowDropdown":3,"./ShadowTemplate":4}]},{},[1,2,3,4,5])
+},{"./CustomDropdown":1,"./ShadowDropdown":2,"./ShadowElement":3,"./ShadowTemplate":4}]},{},[1,2,3,4,5])
 ;

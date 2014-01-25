@@ -5,11 +5,17 @@ ShadowElement = require './ShadowElement'
 
 document.addEventListener 'DOMContentLoaded', (event) ->
 
+  shadowArticleName = 'taco-article'
   shadowDropdownName = 'shadow-dropdown'
   shadowDivButtonName = 'div-button'
   shadowButtonName = 'button-button'
 
   if supportsCustomElements()
+    tacoArticleProto = Object.create HTMLElement.prototype,
+      createdCallback:
+        value: ->
+          new ShadowElement(shadowArticleName)
+
     dropdownProto = Object.create HTMLElement.prototype,
       createdCallback:
           value: ->
@@ -27,6 +33,7 @@ document.addEventListener 'DOMContentLoaded', (event) ->
         value: ->
           new ShadowElement(shadowButtonName)
 
+    tacoArticle = document.registerElement shadowArticleName, prototype: tacoArticleProto
     customDivButton = document.registerElement shadowDivButtonName, prototype: divButtonProto
     customButton = document.registerElement shadowButtonName, prototype: buttonProto
 
