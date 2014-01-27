@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Web Components & ARIA</title>
+    <title>Web Components & Accessibility Sandbox</title>
     <link rel="stylesheet" type="text/css" href="./assets/styles/main.css">
   </head>
 </html>
@@ -13,8 +13,33 @@
   <main>
     <section>
       <header>
-        <h1>Shadow DOM Content Test</h1>
+        <h2>Shadow DOM Content Tests</h2>
       </header>
+      <article>
+        <header>
+          <h3>Existing Content Replacement</h3>
+        </header>
+        <button class="taco-button">Hello tacos</button>
+      </article>
+      <article>
+        <header>
+          <h3>Name tag example</h3>
+        </header>
+        <div class="name-tag">Bob</div>
+        <template id="name-tag-template">
+          <style>@import url('./assets/styles/shadow-content.css')</style>
+          <div class="outer">
+            <div class="boilerplate">
+              <h3>Hi! My name is</h3>
+            </div>
+            <div class="name">
+              <h4>
+                <content></content>
+              </h4>
+            </div>
+          </div>
+        </template>
+      </article>
       <template>
         <div class="article-inner-wrapper">
           <h2><a href="http://baltimore.craigslist.org/crg/4298347086.html" target="_blank" title="Link opens in a new window">DRIVER WITH 4 WHEEL DRIVE VEHICLE NEEDED FOR EMERGENCY TACO BELL RUN</a></h2>
@@ -27,11 +52,11 @@
     </section>
     <section>
       <header>
-        <h1>Interactive Widgets</h1>
+        <h2>Interactive Widgets</h2>
       </header>
       <article>
         <!-- traditional DOM version-->
-        <h2>Dropdown DOM Widget</h2>
+        <h3>Dropdown DOM Widget</h3>
             <div id="dropdown1" class="custom-dropdown">
               <button id="label1" role="tab" aria-controls="linklist1">
                 <div class="accessLabel"></div>select option
@@ -45,7 +70,7 @@
       </article>
       <article>
         <!-- Shadow DOM version-->
-        <h2>Dropdown Web Component</h2>
+        <h3>Dropdown Web Component</h3>
         <template>
           <div id="shadowDropdown">
                     <div id="dropdown2" class="custom-dropdown">
@@ -65,15 +90,15 @@
     </section>
     <section>
       <header>
-        <h1>Buttons</h1>
+        <h2>Buttons</h2>
       </header>
       <div class="button-group">
         <article class="button-widget">
-          <h2>Div with Tab Index</h2>
+          <h3>Div with Tab Index</h3>
               <div tabIndex="0" class="button">div</div>
         </article>
         <article class="button-widget">
-          <h2>Shadow DOM Div with Tab Index</h2>
+          <h3>Shadow DOM Div with Tab Index</h3>
           <template>
                       <div tabIndex="0" class="button">div</div>
           </template>
@@ -82,11 +107,11 @@
       </div>
       <div class="button-group">
         <article class="button-widget">
-          <h2>Button</h2>
+          <h3>Button</h3>
               <button>button</button>
         </article>
         <article class="button-widget">
-          <h2>Shadow DOM Button</h2>
+          <h3>Shadow DOM Button</h3>
           <template>
                       <button>button</button>
           </template>

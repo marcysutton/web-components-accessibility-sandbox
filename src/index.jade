@@ -15,46 +15,46 @@ body
 
     section
       header
-        h1 Shadow DOM Content Test
+        h2 Shadow DOM Content Tests
       include templates/partials/_shadow_article.jade
       taco-article
 
     section
       header
-        h1 Interactive Widgets
+        h2 Interactive Widgets
 
       article
         // traditional DOM version
-        h2 Dropdown DOM Widget
+        h3 Dropdown DOM Widget
         +dropdown("dropdown1", "label1", "linklist1")
 
       article
         // Shadow DOM version
-        h2 Dropdown Web Component
+        h3 Dropdown Web Component
         include templates/partials/_shadow_dropdown.jade
         shadow-dropdown
 
     section
       header
-        h1 Buttons
+        h2 Buttons
 
       div.button-group
         article.button-widget
-          h2 Div with Tab Index
+          h3 Div with Tab Index
           +div_button
 
         article.button-widget
-          h2 Shadow DOM Div with Tab Index
+          h3 Shadow DOM Div with Tab Index
           include templates/partials/_shadow_div.jade
           div-button
 
       div.button-group
         article.button-widget
-          h2 Button
+          h3 Button
           +button_button
 
         article.button-widget
-          h2 Shadow DOM Button
+          h3 Shadow DOM Button
           include templates/partials/_shadow_button.jade
           button-button
 
