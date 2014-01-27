@@ -1,0 +1,21 @@
+.outer {
+  background: blue;
+  border: 2px solid black;
+  border-radius: 1em;
+  font-size: 20pt;
+  min-height: 7em;
+  margin-bottom: 1em;
+  text-align: center;
+  width: 12em; }
+
+.boilerplate {
+  color: white;
+  font-family: sans-serif;
+  padding: 0.5em; }
+
+.name {
+  background: white;
+  color: black;
+  font-family: "Marker Felt", cursive;
+  font-size: 45pt;
+  padding-top: 0.2em; }

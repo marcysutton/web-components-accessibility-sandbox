@@ -22,6 +22,20 @@ body
           h3 Existing Content Replacement
         button.taco-button Hello tacos
 
+      article
+        header
+          h3 Name tag example
+        .name-tag Bob
+        template#name-tag-template
+          style
+            @import url('./assets/styles/shadow-content.css')
+          .outer
+            .boilerplate
+              h3 Hi! My name is
+            .name
+              h4
+                content
+
       include templates/partials/_shadow_article.jade
       taco-article
 

@@ -21,7 +21,8 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         files: {
-          '<%= config.dist %>/styles/main.css' : '<%= config.src %>/styles/main.sass'
+          '<%= config.dist %>/styles/main.css' : '<%= config.src %>/styles/main.sass',
+          '<%= config.dist %>/styles/shadow-content.css' : '<%= config.src %>/styles/shadow-content.css'
         }
       }
     },
@@ -96,7 +97,7 @@ module.exports = function(grunt) {
         tasks: ['browserify']
       },
       sass: {
-        files: ['<%= config.src %>/styles/{,*/}/*.{scss,sass}'],
+        files: ['<%= config.src %>/styles/{,*/}/*.{css,scss,sass}'],
         tasks: ['sass']
       },
       jade: {

@@ -1,0 +1,183 @@
+/* html5doctor.com Reset Stylesheet */
+/* v1.6.1 */
+/* Last Updated: 2010-09-17 */
+/* Author: Richard Clark - http://richclarkdesign.com */
+/* Twitter: @rich_clark */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  line-height: 1; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+nav ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ffff99;
+  color: black;
+  text-decoration: none; }
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ffff99;
+  color: black;
+  font-style: italic;
+  font-weight: bold; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input,
+select {
+  vertical-align: middle; }
+
+template {
+  display: none !important;
+  visibility: hidden !important; }
+
+.offscreen, .accessLabel {
+  display: block;
+  left: -50000px;
+  position: absolute; }
+
+body, button {
+  font-family: Menlo, Courier, monospace;
+  padding: 20px; }
+
+button, .button {
+  background-color: #cccccc;
+  font-weight: bold;
+  border: none;
+  display: block;
+  font-size: 1em;
+  text-align: left;
+  -webkit-appearance: none; }
+  button:hover, button:focus, .button:hover, .button:focus {
+    color: #ff00bf; }
+
+a, button, .button {
+  color: #830081;
+  cursor: pointer; }
+
+.custom-dropdown, button, .button {
+  display: inline-block;
+  padding: 8px;
+  text-decoration: none; }
+
+h1, h2, h3, h4, p {
+  line-height: 1.25em;
+  margin-bottom: 16px; }
+
+h1 {
+  font-size: 1.5em; }
+
+h2 {
+  font-size: 1.25em; }
+
+h3, h4 {
+  font-size: 1em;
+  margin-bottom: 8px; }
+
+#contentTests button {
+  margin-bottom: 16px; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
+
+article {
+  margin-bottom: 16px; }
+
+.custom-dropdown,
+.shadow-dropdown {
+  min-width: 280px;
+  position: relative;
+  width: 30%; }
+  .custom-dropdown button,
+  .shadow-dropdown button {
+    width: 100%; }
+    .custom-dropdown button:after,
+    .shadow-dropdown button:after {
+      content: "\25BC";
+      display: inline-block;
+      float: right;
+      vertical-align: middle; }
+  .custom-dropdown ul,
+  .shadow-dropdown ul {
+    box-shadow: 0 0.5em 1em #999999;
+    background-color: white;
+    display: none;
+    list-style: none;
+    position: absolute;
+    visibility: hidden;
+    z-index: 1;
+    width: 100%; }
+    .custom-dropdown ul a,
+    .shadow-dropdown ul a {
+      display: block; }
+      .custom-dropdown ul a:hover, .custom-dropdown ul a:focus,
+      .shadow-dropdown ul a:hover,
+      .shadow-dropdown ul a:focus {
+        background-color: #ff00bf;
+        color: white; }
+  .custom-dropdown.active .trigger:after,
+  .shadow-dropdown.active .trigger:after {
+    content: "\25B2"; }
+  .custom-dropdown.active ul,
+  .shadow-dropdown.active ul {
+    display: block;
+    visibility: visible; }
+
+.button-group, .article-inner-wrapper {
+  background-color: #f2f2f2;
+  clear: both;
+  padding: 16px;
+  margin-bottom: 16px;
+  max-width: 400px; }
+  .button-group article.button-widget, .article-inner-wrapper article.button-widget {
+    display: inline-block;
+    margin-right: 16px;
+    vertical-align: bottom;
+    width: 40%; }
