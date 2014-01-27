@@ -2,9 +2,14 @@ ShadowTemplate = require './ShadowTemplate'
 ShadowDropdown = require './ShadowDropdown'
 CustomDropdown = require './CustomDropdown'
 ShadowElement = require './ShadowElement'
+ContentReplacements = require './ContentReplacements'
 
 document.addEventListener 'DOMContentLoaded', (event) ->
 
+  # Inline Content Replacements
+  new ContentReplacements()
+
+  # Custom Elements
   shadowArticleName = 'taco-article'
   shadowDropdownName = 'shadow-dropdown'
   shadowDivButtonName = 'div-button'
