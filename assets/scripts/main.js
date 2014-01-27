@@ -1,4 +1,31 @@
 ;(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var ContentReplacements;
+
+ContentReplacements = (function() {
+  function ContentReplacements() {
+    var nameTag, nameTagShadow, nameTagTmpl, tacoBtnHost, tacoBtnRoot, tacoButtonSelector, tacoButtonText;
+    tacoButtonText = 'Give me tacos';
+    tacoButtonSelector = '.taco-button';
+    tacoBtnHost = document.querySelector(tacoButtonSelector);
+    tacoBtnRoot = tacoBtnHost.createShadowRoot();
+    tacoBtnRoot.textContent = tacoButtonText;
+    nameTag = document.querySelector('.name-tag');
+    nameTagShadow = nameTag.createShadowRoot();
+    nameTagShadow.applyAuthorStyles = true;
+    nameTagTmpl = document.querySelector('#name-tag-template');
+    nameTag.textContent = 'Speedy';
+    nameTagShadow.appendChild(nameTagTmpl.content);
+    nameTagTmpl.remove();
+  }
+
+  return ContentReplacements;
+
+})();
+
+module.exports = ContentReplacements;
+
+
+},{}],2:[function(require,module,exports){
 var CustomDropdown,
   __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
@@ -61,7 +88,7 @@ CustomDropdown = (function() {
 module.exports = CustomDropdown;
 
 
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 var CustomDropdown, ShadowDropdown, ShadowTemplate,
   __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
   __hasProp = {}.hasOwnProperty,
@@ -97,7 +124,7 @@ ShadowDropdown = (function(_super) {
 module.exports = ShadowDropdown;
 
 
-},{"./CustomDropdown":1,"./ShadowTemplate":4}],3:[function(require,module,exports){
+},{"./CustomDropdown":2,"./ShadowTemplate":5}],4:[function(require,module,exports){
 var ShadowElement, ShadowTemplate,
   __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
   __hasProp = {}.hasOwnProperty,
@@ -129,7 +156,7 @@ ShadowElement = (function(_super) {
 module.exports = ShadowElement;
 
 
-},{"./ShadowTemplate":4}],4:[function(require,module,exports){
+},{"./ShadowTemplate":5}],5:[function(require,module,exports){
 var ShadowTemplate,
   __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
@@ -167,8 +194,8 @@ ShadowTemplate = (function() {
 module.exports = ShadowTemplate;
 
 
-},{}],5:[function(require,module,exports){
-var CustomDropdown, ShadowDropdown, ShadowElement, ShadowTemplate, supportsCustomElements;
+},{}],6:[function(require,module,exports){
+var ContentReplacements, CustomDropdown, ShadowDropdown, ShadowElement, ShadowTemplate, supportsCustomElements;
 
 ShadowTemplate = require('./ShadowTemplate');
 
@@ -178,8 +205,11 @@ CustomDropdown = require('./CustomDropdown');
 
 ShadowElement = require('./ShadowElement');
 
+ContentReplacements = require('./ContentReplacements');
+
 document.addEventListener('DOMContentLoaded', function(event) {
   var buttonProto, customButton, customDivButton, customDropdown, divButtonProto, dropdownProto, el, elDropdowns, shadowArticleName, shadowButtonName, shadowDivButtonName, shadowDropdownName, tacoArticle, tacoArticleProto, _i, _len, _results;
+  new ContentReplacements();
   shadowArticleName = 'taco-article';
   shadowDropdownName = 'shadow-dropdown';
   shadowDivButtonName = 'div-button';
@@ -240,5 +270,5 @@ supportsCustomElements = function() {
 };
 
 
-},{"./CustomDropdown":1,"./ShadowDropdown":2,"./ShadowElement":3,"./ShadowTemplate":4}]},{},[1,2,3,4,5])
+},{"./ContentReplacements":1,"./CustomDropdown":2,"./ShadowDropdown":3,"./ShadowElement":4,"./ShadowTemplate":5}]},{},[1,2,3,4,5,6])
 ;
