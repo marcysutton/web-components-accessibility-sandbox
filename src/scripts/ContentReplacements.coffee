@@ -3,17 +3,19 @@ class ContentReplacements
   constructor: () ->
     tacoButtonText = 'Give me tacos'
     tacoButtonSelector = '.taco-button'
+    nameTagSelector = '.name-tag'
+    nameTagTemplateSelector = '#name-tag-template'
+    nameTagText = 'TACOCAT'
 
     tacoBtnHost = document.querySelector(tacoButtonSelector)
     tacoBtnRoot = tacoBtnHost.createShadowRoot()
     tacoBtnRoot.textContent = tacoButtonText
 
-    nameTag = document.querySelector('.name-tag')
+    nameTag = document.querySelector(nameTagSelector)
     nameTagShadow = nameTag.createShadowRoot()
-    nameTagShadow.applyAuthorStyles = true
 
-    nameTagTmpl = document.querySelector('#name-tag-template')
-    nameTag.textContent = 'Speedy'
+    nameTagTmpl = document.querySelector(nameTagTemplateSelector)
+    nameTag.textContent = nameTagText
     nameTagShadow.appendChild nameTagTmpl.content
     nameTagTmpl.remove()
 
