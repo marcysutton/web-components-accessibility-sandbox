@@ -31,14 +31,17 @@ button, .button
   &:hover, &:focus
     color: $link-secondary-color
 
-.custom-dropdown a, button, .button
+a, button, .button
   color: $link-primary-color
   cursor: pointer
+
+.custom-dropdown, button, .button
   display: inline-block
   padding: $margin-unit
   text-decoration: none
 
-h1, h2, h3, p
+
+h1, h2, h3, h4, p
   line-height: 1.25em
   margin-bottom: $default-margin
 
@@ -46,5 +49,8 @@ h1
   font-size: 1.5em
 
 h2
-  font-size: 1em
+  font-size: 1.25em
 
+h3, h4
+  font-size: 1em
+  margin-bottom: $default_margin / 2
