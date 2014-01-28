@@ -126,7 +126,7 @@ module.exports = function(grunt) {
         expand: true,
         cwd: '<%= config.src %>',
         dest: '<%= config.dist %>',
-        src: ['bower_components/platform/platform.js']
+        src: ['bower_components/platform/platform.js', 'images/*.{png,jpg,gif}']
       }
     },
     concurrent: {
