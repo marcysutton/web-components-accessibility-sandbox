@@ -141,7 +141,7 @@ html, body {
   #container > header h1 {
     margin: 0; }
 
-main, button {
+main {
   padding: 20px; }
 
 section {
@@ -191,6 +191,10 @@ article {
   .shadow-dropdown.active ul {
     display: block;
     visibility: visible; }
+
+button, .button {
+  border-radius: 5px;
+  padding: 10px 20px; }
 
 .button-group, .article-inner-wrapper {
   background-color: white;
