@@ -6,26 +6,27 @@
     <link rel="stylesheet" type="text/css" href="./assets/styles/main.css">
   </head>
   <body>
-    <header>
-      <h1>Web Components & Accessibility Sandbox</h1>
-    </header>
-    <main>
-      <section>
-        <header>
-          <h2>Shadow DOM Content Tests</h2>
-        </header>
-        <article>
+    <div id="container">
+      <header>
+        <h1>Web Components & Accessibility Sandbox</h1>
+      </header>
+      <main>
+        <section>
           <header>
-            <h3>Existing Content Replacement</h3>
+            <h2>Shadow DOM Content Tests</h2>
           </header>
-          <button class="taco-button">Hello tacos</button>
-        </article>
-        <article>
-          <header>
-            <h3>Name tag example</h3>
-          </header>
-          <div class="name-tag">Bob</div>
-          <template id="name-tag-template"><style>.outer {
+          <article>
+            <header>
+              <h3>Existing Content Replacement</h3>
+            </header>
+            <button class="taco-button">Hello tacos</button>
+          </article>
+          <article>
+            <header>
+              <h3>Name tag example</h3>
+            </header>
+            <div class="name-tag">Bob</div>
+            <template id="name-tag-template"><style>.outer {
   background: #5bc8ff;
   border: 2px solid #5bc8ff;
   border-radius: 1em;
@@ -59,108 +60,109 @@
   padding-bottom: 10px;
 }
 </style>
-            <div class="outer">
-              <div class="boilerplate">
-                <h3>HELLO<span>my name is</span></h3>
-              </div>
-              <div class="name">
-                <h4>
-                  <content></content>
-                </h4>
-              </div>
-            </div>
-          </template>
-        </article>
-        <template class="taco-article">
-          <div class="article-inner-wrapper">
-            <h2><a href="http://baltimore.craigslist.org/crg/4298347086.html" target="_blank" title="Link opens in a new window">DRIVER WITH 4 WHEEL DRIVE VEHICLE NEEDED FOR EMERGENCY TACO BELL RUN</a></h2>
-            <p>It's a snowy night. You have a few drinks, play some video games and then it hits you–an overwhelming desire for a taco.</p>
-            <p>That's what apparently happened to one Baltimorean last night who posted on Craigslist.</p>
-            <p><a href="http://baltimore.craigslist.org/crg/4298347086.html" target="_blank" title="Link opens in a new window">View on Craigslist</a></p>
-          </div>
-        </template>
-        <taco-article></taco-article>
-      </section>
-      <section>
-        <header>
-          <h2>Interactive Widgets</h2>
-        </header>
-        <article>
-          <!-- traditional DOM version-->
-          <h3>Dropdown DOM Widget</h3>
-                <div id="dropdown1" class="custom-dropdown">
-                  <button id="label1" role="tab" aria-controls="linklist1">
-                    <div class="accessLabel"></div>select option
-                  </button>
-                  <ul id="linklist1" role="tabpanel" aria-hidden="true" aria-labeledby="label1" tabIndex="-1">
-                    <li><a href="#" aria-role="option">Link 1</a></li>
-                    <li><a href="#" aria-role="option">Link 2</a></li>
-                    <li><a href="#" aria-role="option">Link 3</a></li>
-                  </ul>
+              <div class="outer">
+                <div class="boilerplate">
+                  <h3>HELLO<span>my name is</span></h3>
                 </div>
-        </article>
-        <article>
-          <!-- Shadow DOM version-->
-          <h3>Dropdown Web Component</h3>
-          <template>
-            <div id="shadowDropdown">
-                        <div id="dropdown2" class="custom-dropdown">
-                          <button id="label2" role="tab" aria-controls="linklist2">
-                            <div class="accessLabel"></div>select option
-                          </button>
-                          <ul id="linklist2" role="tabpanel" aria-hidden="true" aria-labeledby="label2" tabIndex="-1">
-                            <li><a href="#" aria-role="option">Link 1</a></li>
-                            <li><a href="#" aria-role="option">Link 2</a></li>
-                            <li><a href="#" aria-role="option">Link 3</a></li>
-                          </ul>
-                        </div>
+                <div class="name">
+                  <h4>
+                    <content></content>
+                  </h4>
+                </div>
+              </div>
+            </template>
+          </article>
+          <template class="taco-article">
+            <div class="article-inner-wrapper">
+              <h2><a href="http://baltimore.craigslist.org/crg/4298347086.html" target="_blank" title="Link opens in a new window">DRIVER WITH 4 WHEEL DRIVE VEHICLE NEEDED FOR EMERGENCY TACO BELL RUN</a></h2>
+              <p>It's a snowy night. You have a few drinks, play some video games and then it hits you–an overwhelming desire for a taco.</p>
+              <p>That's what apparently happened to one Baltimorean last night who posted on Craigslist.</p>
+              <p><a href="http://baltimore.craigslist.org/crg/4298347086.html" target="_blank" title="Link opens in a new window">View on Craigslist</a></p>
             </div>
           </template>
-          <shadow-dropdown></shadow-dropdown>
-        </article>
-      </section>
-      <section>
-        <header>
-          <h2>Buttons</h2>
-        </header>
-        <div class="button-group">
-          <article class="button-widget">
-            <h3>Div with Tab Index</h3>
-                  <div tabIndex="0" class="button">div</div>
+          <taco-article></taco-article>
+        </section>
+        <section>
+          <header>
+            <h2>Interactive Widgets</h2>
+          </header>
+          <article>
+            <!-- traditional DOM version-->
+            <h3>Dropdown DOM Widget</h3>
+                    <div id="dropdown1" class="custom-dropdown">
+                      <button id="label1" role="tab" aria-controls="linklist1">
+                        <div class="accessLabel"></div>select option
+                      </button>
+                      <ul id="linklist1" role="tabpanel" aria-hidden="true" aria-labeledby="label1" tabIndex="-1">
+                        <li><a href="#" aria-role="option">Link 1</a></li>
+                        <li><a href="#" aria-role="option">Link 2</a></li>
+                        <li><a href="#" aria-role="option">Link 3</a></li>
+                      </ul>
+                    </div>
           </article>
-          <article class="button-widget">
-            <h3>Shadow DOM Div with Tab Index</h3>
+          <article>
+            <!-- Shadow DOM version-->
+            <h3>Dropdown Web Component</h3>
             <template>
-                          <div tabIndex="0" class="button">div</div>
+              <div id="shadowDropdown">
+                            <div id="dropdown2" class="custom-dropdown">
+                              <button id="label2" role="tab" aria-controls="linklist2">
+                                <div class="accessLabel"></div>select option
+                              </button>
+                              <ul id="linklist2" role="tabpanel" aria-hidden="true" aria-labeledby="label2" tabIndex="-1">
+                                <li><a href="#" aria-role="option">Link 1</a></li>
+                                <li><a href="#" aria-role="option">Link 2</a></li>
+                                <li><a href="#" aria-role="option">Link 3</a></li>
+                              </ul>
+                            </div>
+              </div>
             </template>
-            <div-button></div-button>
+            <shadow-dropdown></shadow-dropdown>
           </article>
-        </div>
-        <div class="button-group">
-          <article class="button-widget">
-            <h3>Button</h3>
-                  <button>button</button>
-          </article>
-          <article class="button-widget">
-            <h3>Shadow DOM Button</h3>
-            <template>
-                          <button>button</button>
-            </template>
-            <button-button></button-button>
-          </article>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <ul>
-        <li>
-          <h4>Sandbox by <a href="http://marcysutton.com/" target="_blank" title="Link opens in a new window">Marcy Sutton at Substantial.</a></h4>
-        </li>
-        <li>
-          <h4><a href="http://github.com/marcysutton/web-components-accessibility">Source on Github</a></h4>
-        </li>
-      </ul>
-    </footer>
+        </section>
+        <section>
+          <header>
+            <h2>Buttons</h2>
+          </header>
+          <div class="button-group">
+            <article class="button-widget">
+              <h3>Div with Tab Index</h3>
+                      <div tabIndex="0" class="button">div</div>
+            </article>
+            <article class="button-widget">
+              <h3>Shadow DOM Div with Tab Index</h3>
+              <template>
+                              <div tabIndex="0" class="button">div</div>
+              </template>
+              <div-button></div-button>
+            </article>
+          </div>
+          <div class="button-group">
+            <article class="button-widget">
+              <h3>Button</h3>
+                      <button>button</button>
+            </article>
+            <article class="button-widget">
+              <h3>Shadow DOM Button</h3>
+              <template>
+                              <button>button</button>
+              </template>
+              <button-button></button-button>
+            </article>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <ul>
+          <li>
+            <h4>Sandbox by <a href="http://marcysutton.com/" target="_blank" title="Link opens in a new window">Marcy Sutton at Substantial.</a></h4>
+          </li>
+          <li>
+            <h4><a href="http://github.com/marcysutton/web-components-accessibility">Source on Github</a></h4>
+          </li>
+        </ul>
+      </footer>
+    </div>
     <script src="./assets/bower_components/platform/platform.js"></script>
     <script src="./assets/scripts/main.js"></script>
   </body>

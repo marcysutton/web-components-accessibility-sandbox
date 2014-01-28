@@ -80,7 +80,7 @@ template {
   left: -50000px;
   position: absolute; }
 
-body {
+#container {
   background: #fddf96 url(../images/taco-nyan.jpg) no-repeat bottom right; }
 
 body, button {
@@ -129,13 +129,25 @@ h3, h4 {
   -ms-box-sizing: border-box;
   box-sizing: border-box; }
 
-body > header {
+html, body {
+  height: 100%; }
+
+#container {
+  min-height: 100%;
+  position: relative; }
+
+#container > header {
   padding: 20px 0 0 20px; }
-  body > header h1 {
+  #container > header h1 {
     margin: 0; }
 
 main, button {
   padding: 20px; }
+
+section {
+  display: inline-block;
+  padding-right: 16px;
+  vertical-align: top; }
 
 article {
   margin-bottom: 16px; }
@@ -193,10 +205,13 @@ article {
     width: 40%; }
 
 footer {
+  bottom: 0;
   background-color: #dccb09;
   border-top: 5px solid black;
-  min-height: 79px;
-  padding: 16px; }
+  height: 79px;
+  padding: 16px;
+  position: absolute;
+  width: 100%; }
   footer ul {
     list-style: none; }
     footer ul li {

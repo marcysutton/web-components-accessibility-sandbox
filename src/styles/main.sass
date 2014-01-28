@@ -6,7 +6,14 @@
 *
   +box-sizing
 
-body > header
+html, body
+  height: 100%
+
+#container
+  min-height: 100%
+  position: relative
+
+#container > header
   padding: 20px 0 0 20px
 
   h1
@@ -14,6 +21,11 @@ body > header
 
 main, button
   padding: 20px
+
+section
+  display: inline-block
+  padding-right: $default_margin
+  vertical-align: top
 
 article
   margin-bottom: $default_margin
@@ -72,10 +84,13 @@ article
     width: 40%
 
 footer
+  bottom: 0
   background-color: $secondary-bg-color
   border-top: 5px solid black
-  min-height: 79px
+  height: 79px
   padding: $default_margin
+  position: absolute
+  width: 100%
 
   ul
     list-style: none
