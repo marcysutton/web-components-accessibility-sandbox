@@ -17,7 +17,6 @@ ContentReplacements = (function() {
     nameTagTmpl = document.querySelector(nameTagTemplateSelector);
     nameTag.textContent = nameTagText;
     nameTagShadow.appendChild(nameTagTmpl.content);
-    nameTagTmpl.remove();
   }
 
   return ContentReplacements;
@@ -137,7 +136,7 @@ ShadowTemplate = require('./ShadowTemplate');
 ShadowElement = (function(_super) {
   __extends(ShadowElement, _super);
 
-  function ShadowElement(shadowHost) {
+  function ShadowElement(shadowHost, templateSelector) {
     this.shadowCreatedCallback = __bind(this.shadowCreatedCallback, this);
     ShadowElement.__super__.constructor.apply(this, arguments);
   }
@@ -210,9 +209,10 @@ ShadowElement = require('./ShadowElement');
 ContentReplacements = require('./ContentReplacements');
 
 document.addEventListener('DOMContentLoaded', function(event) {
-  var buttonProto, customButton, customDivButton, customDropdown, divButtonProto, dropdownProto, el, elDropdowns, shadowArticleName, shadowButtonName, shadowDivButtonName, shadowDropdownName, tacoArticle, tacoArticleProto, _i, _len, _results;
+  var buttonProto, customButton, customDivButton, customDropdown, divButtonProto, dropdownProto, el, elDropdowns, shadowArticleName, shadowButtonName, shadowDivButtonName, shadowDropdownName, shadowTemplate, tacoArticle, tacoArticleProto, _i, _len, _results;
   new ContentReplacements();
   shadowArticleName = 'taco-article';
+  shadowTemplate = 'template.taco-article';
   shadowDropdownName = 'shadow-dropdown';
   shadowDivButtonName = 'div-button';
   shadowButtonName = 'button-button';
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     tacoArticleProto = Object.create(HTMLElement.prototype, {
       createdCallback: {
         value: function() {
-          return new ShadowElement(shadowArticleName);
+          return new ShadowElement(shadowArticleName, shadowTemplate);
         }
       }
     });

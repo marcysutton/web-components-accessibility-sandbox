@@ -17,6 +17,6 @@ class ContentReplacements
     nameTagTmpl = document.querySelector(nameTagTemplateSelector)
     nameTag.textContent = nameTagText
     nameTagShadow.appendChild nameTagTmpl.content
-    nameTagTmpl.remove()
+    # nameTagTmpl.remove()
 
 module.exports = ContentReplacements
