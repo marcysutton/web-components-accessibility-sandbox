@@ -3,11 +3,11 @@ mixin dropdown(divID, labelID, linklistID)
     button(id="#{labelID}", role="tab", aria-controls="#{linklistID}")
       .accessLabel
       | select option
-    ul(id="#{linklistID}", role="tabpanel", aria-hidden="true", aria-labeledby="#{labelID}", tabIndex="-1")
+    ul(id="#{linklistID}", role="tabpanel", aria-hidden="true", aria-expanded="false", aria-labeledby="#{labelID}", tabIndex="-1")
       li
         a(href="#", aria-role="option") Link 1
       li
         a(href="#", aria-role="option") Link 2
       li
         a(href="#", aria-role="option") Link 3
-        
+

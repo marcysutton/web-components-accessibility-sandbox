@@ -73,11 +73,13 @@ CustomDropdown = (function() {
     if (ddClasslist.contains('active')) {
       ddClasslist.remove('active');
       this.elCustomDropdownUl.setAttribute('aria-hidden', true);
+      this.elCustomDropdownUl.setAttribute('aria-expanded', false);
       return this.updateAccessLabel(this.accessLabelExpanded);
     } else {
       ddClasslist.add('active');
       this.elFirstSelectItem.focus();
       this.elCustomDropdownUl.setAttribute('aria-hidden', false);
+      this.elCustomDropdownUl.setAttribute('aria-expanded', true);
       return this.updateAccessLabel(this.accessLabelCollapsed);
     }
   };
