@@ -20,13 +20,15 @@ html(lang="en")
 
           article
             header
-              h3 Existing Content Replacement
+              h3 Replacing Text via Shadow DOM
+              p Button in DOM says "Hello tacos" but is replaced with Shadow DOM
             button.taco-button Hello tacos
 
           article
             header
-              h3 Name tag example
-            div.name-tag Bob
+              h3 Shadow DOM Content Element Example
+              p The name "Nyan" is replaced by "Tacocat"
+            div.name-tag Nyan
             template#name-tag-template
               include styles/shadow-content.css
               .outer
@@ -37,8 +39,11 @@ html(lang="en")
                   h4
                     content
 
-          include templates/partials/_shadow_article.jade
-          taco-article
+          article
+            header
+              h3 Custom Element With Text Content
+            include templates/partials/_shadow_article.jade
+            taco-article
 
         section
           header
@@ -46,12 +51,12 @@ html(lang="en")
 
           article
             // traditional DOM version
-            h3 Dropdown DOM Widget
+            h3 Regular DOM Dropdown Widget
             +dropdown("dropdown1", "label1", "linklist1")
 
           article
             // Shadow DOM version
-            h3 Dropdown Web Component
+            h3 Shadow DOM Dropdown Widget
             include templates/partials/_shadow_dropdown.jade
             shadow-dropdown
 
@@ -61,17 +66,17 @@ html(lang="en")
 
           div.button-group
             article.button-widget
-              h3 Div with Tab Index
+              h3 Regular DOM Element with Tab Index
               +div_button
 
             article.button-widget
-              h3 Shadow DOM Div with Tab Index
+              h3 Shadow DOM Element with Tab Index
               include templates/partials/_shadow_div.jade
               div-button
 
           div.button-group
             article.button-widget
-              h3 Button
+              h3 Regular DOM Button
               +button_button
 
             article.button-widget

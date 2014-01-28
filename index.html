@@ -17,15 +17,17 @@
           </header>
           <article>
             <header>
-              <h3>Existing Content Replacement</h3>
+              <h3>Replacing Text via Shadow DOM</h3>
+              <p>Button in DOM says "Hello tacos" but is replaced with Shadow DOM</p>
             </header>
             <button class="taco-button">Hello tacos</button>
           </article>
           <article>
             <header>
-              <h3>Name tag example</h3>
+              <h3>Shadow DOM Content Element Example</h3>
+              <p>The name "Nyan" is replaced by "Tacocat"</p>
             </header>
-            <div class="name-tag">Bob</div>
+            <div class="name-tag">Nyan</div>
             <template id="name-tag-template"><style>.outer {
   background: #5bc8ff;
   border: 2px solid #5bc8ff;
@@ -72,15 +74,20 @@
               </div>
             </template>
           </article>
-          <template class="taco-article">
-            <div class="article-inner-wrapper">
-              <h2><a href="http://baltimore.craigslist.org/crg/4298347086.html" target="_blank" title="Link opens in a new window">DRIVER WITH 4 WHEEL DRIVE VEHICLE NEEDED FOR EMERGENCY TACO BELL RUN</a></h2>
-              <p>It's a snowy night. You have a few drinks, play some video games and then it hits you–an overwhelming desire for a taco.</p>
-              <p>That's what apparently happened to one Baltimorean last night who posted on Craigslist.</p>
-              <p><a href="http://baltimore.craigslist.org/crg/4298347086.html" target="_blank" title="Link opens in a new window">View on Craigslist</a></p>
-            </div>
-          </template>
-          <taco-article></taco-article>
+          <article>
+            <header>
+              <h3>Custom Element With Text Content</h3>
+            </header>
+            <template class="taco-article">
+              <div class="article-inner-wrapper">
+                <h2><a href="http://baltimore.craigslist.org/crg/4298347086.html" target="_blank" title="Link opens in a new window">DRIVER WITH 4 WHEEL DRIVE VEHICLE NEEDED FOR EMERGENCY TACO BELL RUN</a></h2>
+                <p>It's a snowy night. You have a few drinks, play some video games and then it hits you–an overwhelming desire for a taco.</p>
+                <p>That's what apparently happened to one Baltimorean last night who posted on Craigslist.</p>
+                <p><a href="http://baltimore.craigslist.org/crg/4298347086.html" target="_blank" title="Link opens in a new window">View on Craigslist</a></p>
+              </div>
+            </template>
+            <taco-article></taco-article>
+          </article>
         </section>
         <section>
           <header>
@@ -88,7 +95,7 @@
           </header>
           <article>
             <!-- traditional DOM version-->
-            <h3>Dropdown DOM Widget</h3>
+            <h3>Regular DOM Dropdown Widget</h3>
                     <div id="dropdown1" class="custom-dropdown">
                       <button id="label1" role="tab" aria-controls="linklist1">
                         <div class="accessLabel"></div>select option
@@ -102,7 +109,7 @@
           </article>
           <article>
             <!-- Shadow DOM version-->
-            <h3>Dropdown Web Component</h3>
+            <h3>Shadow DOM Dropdown Widget</h3>
             <template>
               <div id="shadowDropdown">
                             <div id="dropdown2" class="custom-dropdown">
@@ -126,20 +133,20 @@
           </header>
           <div class="button-group">
             <article class="button-widget">
-              <h3>Div with Tab Index</h3>
-                      <div tabIndex="0" class="button">div</div>
+              <h3>Regular DOM Element with Tab Index</h3>
+                      <div tabIndex="0" role="button" class="button">div</div>
             </article>
             <article class="button-widget">
-              <h3>Shadow DOM Div with Tab Index</h3>
+              <h3>Shadow DOM Element with Tab Index</h3>
               <template>
-                              <div tabIndex="0" class="button">div</div>
+                              <div tabIndex="0" role="button" class="button">div</div>
               </template>
               <div-button></div-button>
             </article>
           </div>
           <div class="button-group">
             <article class="button-widget">
-              <h3>Button</h3>
+              <h3>Regular DOM Button</h3>
                       <button>button</button>
             </article>
             <article class="button-widget">

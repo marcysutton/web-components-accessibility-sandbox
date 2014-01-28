@@ -120,6 +120,10 @@ h3, h4 {
   font-size: 1em;
   margin-bottom: 8px; }
 
+header p {
+  font-size: 0.75em;
+  font-style: italic; }
+
 #contentTests button {
   margin-bottom: 16px; }
 
@@ -148,6 +152,8 @@ section {
   display: inline-block;
   padding-right: 16px;
   vertical-align: top; }
+  section header p {
+    max-width: 320px; }
 
 article {
   margin-bottom: 16px; }
