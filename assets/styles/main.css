@@ -14,7 +14,7 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 body {
   line-height: 1; }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {
   display: block; }
 
 nav ul {
@@ -80,29 +80,33 @@ template {
   left: -50000px;
   position: absolute; }
 
+#container {
+  background: #fddf96 url(../images/taco-nyan.jpg) no-repeat bottom right; }
+
 body, button {
-  font-family: Menlo, Courier, monospace;
-  padding: 20px; }
+  font-family: Menlo, Courier, monospace; }
 
 button, .button {
-  background-color: #cccccc;
+  background-color: #dccb09;
   font-weight: bold;
   border: none;
   display: block;
   font-size: 1em;
   text-align: left;
   -webkit-appearance: none; }
-  button:hover, button:focus, .button:hover, .button:focus {
-    color: #ff00bf; }
+
+a, button, .button {
+  color: black;
+  cursor: pointer; }
+  a:hover, a:focus, button:hover, button:focus, .button:hover, .button:focus {
+    color: #2ec133; }
 
 .custom-dropdown a, button, .button {
-  color: #830081;
-  cursor: pointer;
   display: inline-block;
   padding: 8px;
   text-decoration: none; }
 
-h1, h2, h3, p {
+h1, h2, h3, h4, p {
   line-height: 1.25em;
   margin-bottom: 16px; }
 
@@ -110,7 +114,14 @@ h1 {
   font-size: 1.5em; }
 
 h2 {
-  font-size: 1em; }
+  font-size: 1.25em; }
+
+h3, h4 {
+  font-size: 1em;
+  margin-bottom: 8px; }
+
+#contentTests button {
+  margin-bottom: 16px; }
 
 * {
   -webkit-box-sizing: border-box;
@@ -118,9 +129,31 @@ h2 {
   -ms-box-sizing: border-box;
   box-sizing: border-box; }
 
+html, body {
+  height: 100%; }
+
+#container {
+  min-height: 100%;
+  position: relative; }
+
+#container > header {
+  padding: 20px 0 0 20px; }
+  #container > header h1 {
+    margin: 0; }
+
+main {
+  padding: 20px; }
+
+section {
+  display: inline-block;
+  padding-right: 16px;
+  vertical-align: top; }
+
+article {
+  margin-bottom: 16px; }
+
 .custom-dropdown,
 .shadow-dropdown {
-  margin: 16px 0;
   min-width: 280px;
   position: relative;
   width: 30%; }
@@ -149,8 +182,8 @@ h2 {
       .custom-dropdown ul a:hover, .custom-dropdown ul a:focus,
       .shadow-dropdown ul a:hover,
       .shadow-dropdown ul a:focus {
-        background-color: #ff00bf;
-        color: white; }
+        background-color: #2ec133;
+        color: black; }
   .custom-dropdown.active .trigger:after,
   .shadow-dropdown.active .trigger:after {
     content: "\25B2"; }
@@ -159,8 +192,12 @@ h2 {
     display: block;
     visibility: visible; }
 
+button, .button {
+  border-radius: 5px;
+  padding: 10px 20px; }
+
 .button-group, .article-inner-wrapper {
-  background-color: #f2f2f2;
+  background-color: white;
   clear: both;
   padding: 16px;
   margin-bottom: 16px;
@@ -170,3 +207,17 @@ h2 {
     margin-right: 16px;
     vertical-align: bottom;
     width: 40%; }
+
+footer {
+  bottom: 0;
+  background-color: #dccb09;
+  border-top: 5px solid black;
+  height: 79px;
+  padding: 16px;
+  position: absolute;
+  width: 100%; }
+  footer ul {
+    list-style: none; }
+    footer ul li {
+      display: inline-block;
+      font-size: 0.85em; }

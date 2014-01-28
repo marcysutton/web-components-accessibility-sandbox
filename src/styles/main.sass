@@ -1,13 +1,37 @@
 @import 'reset'
 @import 'mixins'
 @import 'defaults'
+@import 'content_test_section'
 
 *
   +box-sizing
 
+html, body
+  height: 100%
+
+#container
+  min-height: 100%
+  position: relative
+
+#container > header
+  padding: 20px 0 0 20px
+
+  h1
+    margin: 0
+
+main
+  padding: 20px
+
+section
+  display: inline-block
+  padding-right: $default_margin
+  vertical-align: top
+
+article
+  margin-bottom: $default_margin
+
 .custom-dropdown,
 .shadow-dropdown
-  margin: $default-margin 0
   min-width: 280px
   position: relative
   width: 30%
@@ -36,7 +60,7 @@
 
       &:hover, &:focus
         background-color: $link-secondary-color
-        color: $link-tertiary-color
+        color: $link-primary-color
 
   &.active
     .trigger:after
@@ -46,8 +70,12 @@
       display: block
       visibility: visible
 
+button, .button
+  border-radius: 5px
+  padding: 10px 20px
+
 .button-group, .article-inner-wrapper
-  background-color: #f2f2f2
+  background-color: #fff
   clear: both
   padding: $default_margin
   margin-bottom: $default-margin
@@ -59,3 +87,18 @@
     vertical-align: bottom
     width: 40%
 
+footer
+  bottom: 0
+  background-color: $secondary-bg-color
+  border-top: 5px solid black
+  height: 79px
+  padding: $default_margin
+  position: absolute
+  width: 100%
+
+  ul
+    list-style: none
+
+    li
+      display: inline-block
+      font-size: 0.85em

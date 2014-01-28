@@ -2,7 +2,7 @@ ShadowTemplate = require './ShadowTemplate'
 
 class ShadowElement extends ShadowTemplate
 
-	constructor: (shadowHost) ->
+	constructor: (shadowHost, templateSelector) ->
 		super
 
 	shadowCreatedCallback: () =>

@@ -2,61 +2,91 @@ doctype html
 html(lang="en")
   head
     meta(charset="utf-8")
-    title Web Components & ARIA
+    title Web Components & Accessibility Sandbox
     link(rel="stylesheet", type="text/css", href="./assets/styles/main.css")
 
-body
-  header
-    h1 Web Components & Accessibility Sandbox
-  main
-    include templates/mixins/_dropdown.jade
-    include templates/mixins/_div_button.jade
-    include templates/mixins/_button_button.jade
-
-    section
+  body
+    #container
       header
-        h1 Shadow DOM Content Test
-      include templates/partials/_shadow_article.jade
-      taco-article
+        h1 Web Components & Accessibility Sandbox
+      main
+        include templates/mixins/_dropdown.jade
+        include templates/mixins/_div_button.jade
+        include templates/mixins/_button_button.jade
 
-    section
-      header
-        h1 Interactive Widgets
+        section
+          header
+            h2 Shadow DOM Content Tests
 
-      article
-        // traditional DOM version
-        h2 Dropdown DOM Widget
-        +dropdown("dropdown1", "label1", "linklist1")
+          article
+            header
+              h3 Existing Content Replacement
+            button.taco-button Hello tacos
 
-      article
-        // Shadow DOM version
-        h2 Dropdown Web Component
-        include templates/partials/_shadow_dropdown.jade
-        shadow-dropdown
+          article
+            header
+              h3 Name tag example
+            div.name-tag Bob
+            template#name-tag-template
+              include styles/shadow-content.css
+              .outer
+                .boilerplate
+                  h3 HELLO
+                    span my name is
+                .name
+                  h4
+                    content
 
-    section
-      header
-        h1 Buttons
+          include templates/partials/_shadow_article.jade
+          taco-article
 
-      div.button-group
-        article.button-widget
-          h2 Div with Tab Index
-          +div_button
+        section
+          header
+            h2 Interactive Widgets
 
-        article.button-widget
-          h2 Shadow DOM Div with Tab Index
-          include templates/partials/_shadow_div.jade
-          div-button
+          article
+            // traditional DOM version
+            h3 Dropdown DOM Widget
+            +dropdown("dropdown1", "label1", "linklist1")
 
-      div.button-group
-        article.button-widget
-          h2 Button
-          +button_button
+          article
+            // Shadow DOM version
+            h3 Dropdown Web Component
+            include templates/partials/_shadow_dropdown.jade
+            shadow-dropdown
 
-        article.button-widget
-          h2 Shadow DOM Button
-          include templates/partials/_shadow_button.jade
-          button-button
+        section
+          header
+            h2 Buttons
 
-  script(src="./assets/bower_components/platform/platform.js")
-  script(src="./assets/scripts/main.js")
+          div.button-group
+            article.button-widget
+              h3 Div with Tab Index
+              +div_button
+
+            article.button-widget
+              h3 Shadow DOM Div with Tab Index
+              include templates/partials/_shadow_div.jade
+              div-button
+
+          div.button-group
+            article.button-widget
+              h3 Button
+              +button_button
+
+            article.button-widget
+              h3 Shadow DOM Button
+              include templates/partials/_shadow_button.jade
+              button-button
+
+      footer
+        ul
+          li
+            h4 Sandbox by 
+              a(href="http://marcysutton.com/", target="_blank", title="Link opens in a new window") Marcy Sutton at Substantial.
+          li
+            h4
+              a(href="http://github.com/marcysutton/web-components-accessibility") Source on Github
+
+    script(src="./assets/bower_components/platform/platform.js")
+    script(src="./assets/scripts/main.js")
