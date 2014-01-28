@@ -1,12 +1,12 @@
 $margin-unit: 8px
 $default-margin: $margin-unit * 2
 
+$primary-bg-color: #fddf96
+$secondary-bg-color: #dccb09
 
-$link-primary-color: #830081
-$link-secondary-color: #FF00BF
+$link-primary-color: #000
+$link-secondary-color: #2ec133
 $link-tertiary-color: #fff
-
-$list-item-bg-color: #ccc
 
 $shadow-color: #999
 
@@ -15,12 +15,14 @@ $shadow-color: #999
   left: -50000px
   position: absolute
 
+body
+  background: $primary-bg-color url(../images/taco-nyan.jpg) no-repeat bottom right
+
 body, button
   font-family: Menlo, Courier, monospace
-  padding: 20px
 
 button, .button
-  background-color: $list-item-bg-color
+  background-color: $secondary-bg-color
   font-weight: bold
   border: none
   display: block
@@ -28,18 +30,17 @@ button, .button
   text-align: left
   -webkit-appearance: none
 
-  &:hover, &:focus
-    color: $link-secondary-color
-
 a, button, .button
   color: $link-primary-color
   cursor: pointer
 
-.custom-dropdown, button, .button
+  &:hover, &:focus
+    color: $link-secondary-color
+
+.custom-dropdown a, button, .button
   display: inline-block
   padding: $margin-unit
   text-decoration: none
-
 
 h1, h2, h3, h4, p
   line-height: 1.25em

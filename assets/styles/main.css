@@ -80,26 +80,28 @@ template {
   left: -50000px;
   position: absolute; }
 
+body {
+  background: #fddf96 url(../images/taco-nyan.jpg) no-repeat bottom right; }
+
 body, button {
-  font-family: Menlo, Courier, monospace;
-  padding: 20px; }
+  font-family: Menlo, Courier, monospace; }
 
 button, .button {
-  background-color: #cccccc;
+  background-color: #dccb09;
   font-weight: bold;
   border: none;
   display: block;
   font-size: 1em;
   text-align: left;
   -webkit-appearance: none; }
-  button:hover, button:focus, .button:hover, .button:focus {
-    color: #ff00bf; }
 
 a, button, .button {
-  color: #830081;
+  color: black;
   cursor: pointer; }
+  a:hover, a:focus, button:hover, button:focus, .button:hover, .button:focus {
+    color: #2ec133; }
 
-.custom-dropdown, button, .button {
+.custom-dropdown a, button, .button {
   display: inline-block;
   padding: 8px;
   text-decoration: none; }
@@ -126,6 +128,14 @@ h3, h4 {
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box; }
+
+body > header {
+  padding: 20px 0 0 20px; }
+  body > header h1 {
+    margin: 0; }
+
+main, button {
+  padding: 20px; }
 
 article {
   margin-bottom: 16px; }
@@ -160,8 +170,8 @@ article {
       .custom-dropdown ul a:hover, .custom-dropdown ul a:focus,
       .shadow-dropdown ul a:hover,
       .shadow-dropdown ul a:focus {
-        background-color: #ff00bf;
-        color: white; }
+        background-color: #2ec133;
+        color: black; }
   .custom-dropdown.active .trigger:after,
   .shadow-dropdown.active .trigger:after {
     content: "\25B2"; }
@@ -171,7 +181,7 @@ article {
     visibility: visible; }
 
 .button-group, .article-inner-wrapper {
-  background-color: #f2f2f2;
+  background-color: white;
   clear: both;
   padding: 16px;
   margin-bottom: 16px;
@@ -181,3 +191,14 @@ article {
     margin-right: 16px;
     vertical-align: bottom;
     width: 40%; }
+
+footer {
+  background-color: #dccb09;
+  border-top: 5px solid black;
+  min-height: 79px;
+  padding: 16px; }
+  footer ul {
+    list-style: none; }
+    footer ul li {
+      display: inline-block;
+      font-size: 0.85em; }

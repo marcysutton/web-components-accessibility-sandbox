@@ -6,6 +6,15 @@
 *
   +box-sizing
 
+body > header
+  padding: 20px 0 0 20px
+
+  h1
+    margin: 0
+
+main, button
+  padding: 20px
+
 article
   margin-bottom: $default_margin
 
@@ -39,7 +48,7 @@ article
 
       &:hover, &:focus
         background-color: $link-secondary-color
-        color: $link-tertiary-color
+        color: $link-primary-color
 
   &.active
     .trigger:after
@@ -50,7 +59,7 @@ article
       visibility: visible
 
 .button-group, .article-inner-wrapper
-  background-color: #f2f2f2
+  background-color: #fff
   clear: both
   padding: $default_margin
   margin-bottom: $default-margin
@@ -62,3 +71,15 @@ article
     vertical-align: bottom
     width: 40%
 
+footer
+  background-color: $secondary-bg-color
+  border-top: 5px solid black
+  min-height: 79px
+  padding: $default_margin
+
+  ul
+    list-style: none
+
+    li
+      display: inline-block
+      font-size: 0.85em
