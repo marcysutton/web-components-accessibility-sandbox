@@ -3,8 +3,8 @@ class CustomDropdown
   elCustomDropdown: null,
   elCustomDropdownUl: null,
 
-  accessLabelExpanded: 'collapsed',
-  accessLabelCollapsed: 'expanded',
+  accessLabelExpanded: 'expanded',
+  accessLabelCollapsed: 'collapsed',
 
   constructor: ($el, shadow=false) ->
     # Cache elements
@@ -34,11 +34,13 @@ class CustomDropdown
     if ddClasslist.contains('active')
       ddClasslist.remove('active')
       @elCustomDropdownUl.setAttribute('aria-hidden', true)
+      @elCustomDropdownUl.setAttribute('aria-expanded', false)
       @updateAccessLabel @accessLabelExpanded
     else
       ddClasslist.add('active')
       @elFirstSelectItem.focus()
       @elCustomDropdownUl.setAttribute('aria-hidden', false)
+      @elCustomDropdownUl.setAttribute('aria-expanded', true)
       @updateAccessLabel @accessLabelCollapsed
 
 module.exports = CustomDropdown
