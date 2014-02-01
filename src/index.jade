@@ -9,7 +9,7 @@ html(lang="en")
     #container
       header
         h1 Web Components & Accessibility Sandbox
-      main
+      main(role="main")
         include templates/mixins/_dropdown.jade
         include templates/mixins/_div_button.jade
         include templates/mixins/_button_button.jade
@@ -18,13 +18,13 @@ html(lang="en")
           header
             h2 Shadow DOM Content Tests
 
-          article
+          article(role="article")
             header
               h3 Replacing Text via Shadow DOM
               p Button in DOM says "Hello tacos" but is replaced with Shadow DOM
             button.taco-button Hello tacos
 
-          article
+          article(role="article")
             header
               h3 Shadow DOM Content Element Example
               p The name "Nyan" is replaced by "Tacocat"
@@ -39,7 +39,7 @@ html(lang="en")
                   h4
                     content
 
-          article
+          article(role="article")
             header
               h3 Custom Element With Text Content
             include templates/partials/_shadow_article.jade
@@ -49,12 +49,12 @@ html(lang="en")
           header
             h2 Interactive Widgets
 
-          article
+          article(role="article")
             // traditional DOM version
             h3 Regular DOM Dropdown Widget
             +dropdown("dropdown1", "label1", "linklist1")
 
-          article
+          article(role="article")
             // Shadow DOM version
             h3 Shadow DOM Dropdown Widget
             include templates/partials/_shadow_dropdown.jade
@@ -65,21 +65,21 @@ html(lang="en")
             h2 Buttons
 
           div.button-group
-            article.button-widget
+            article.button-widget(role="article")
               h3 Regular DOM Element with Tab Index
               +div_button
 
-            article.button-widget
+            article.button-widget(role="article")
               h3 Shadow DOM Element with Tab Index
               include templates/partials/_shadow_div.jade
               div-button
 
           div.button-group
-            article.button-widget
+            article.button-widget(role="article")
               h3 Regular DOM Button
               +button_button
 
-            article.button-widget
+            article.button-widget(role="article")
               h3 Shadow DOM Button
               include templates/partials/_shadow_button.jade
               button-button

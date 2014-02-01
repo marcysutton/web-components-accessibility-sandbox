@@ -10,19 +10,19 @@
       <header>
         <h1>Web Components & Accessibility Sandbox</h1>
       </header>
-      <main>
+      <main role="main">
         <section>
           <header>
             <h2>Shadow DOM Content Tests</h2>
           </header>
-          <article>
+          <article role="article">
             <header>
               <h3>Replacing Text via Shadow DOM</h3>
               <p>Button in DOM says "Hello tacos" but is replaced with Shadow DOM</p>
             </header>
             <button class="taco-button">Hello tacos</button>
           </article>
-          <article>
+          <article role="article">
             <header>
               <h3>Shadow DOM Content Element Example</h3>
               <p>The name "Nyan" is replaced by "Tacocat"</p>
@@ -74,7 +74,7 @@
               </div>
             </template>
           </article>
-          <article>
+          <article role="article">
             <header>
               <h3>Custom Element With Text Content</h3>
             </header>
@@ -93,7 +93,7 @@
           <header>
             <h2>Interactive Widgets</h2>
           </header>
-          <article>
+          <article role="article">
             <!-- traditional DOM version-->
             <h3>Regular DOM Dropdown Widget</h3>
                     <div id="dropdown1" class="custom-dropdown">
@@ -107,7 +107,7 @@
                       </ul>
                     </div>
           </article>
-          <article>
+          <article role="article">
             <!-- Shadow DOM version-->
             <h3>Shadow DOM Dropdown Widget</h3>
             <template>
@@ -132,11 +132,11 @@
             <h2>Buttons</h2>
           </header>
           <div class="button-group">
-            <article class="button-widget">
+            <article role="article" class="button-widget">
               <h3>Regular DOM Element with Tab Index</h3>
                       <div tabIndex="0" role="button" class="button">div</div>
             </article>
-            <article class="button-widget">
+            <article role="article" class="button-widget">
               <h3>Shadow DOM Element with Tab Index</h3>
               <template>
                               <div tabIndex="0" role="button" class="button">div</div>
@@ -145,11 +145,11 @@
             </article>
           </div>
           <div class="button-group">
-            <article class="button-widget">
+            <article role="article" class="button-widget">
               <h3>Regular DOM Button</h3>
                       <button>button</button>
             </article>
-            <article class="button-widget">
+            <article role="article" class="button-widget">
               <h3>Shadow DOM Button</h3>
               <template>
                               <button>button</button>

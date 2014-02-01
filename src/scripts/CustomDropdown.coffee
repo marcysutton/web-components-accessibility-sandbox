@@ -3,8 +3,8 @@ class CustomDropdown
   elCustomDropdown: null,
   elCustomDropdownUl: null,
 
-  accessLabelExpanded: 'collapsed',
-  accessLabelCollapsed: 'expanded',
+  accessLabelExpanded: 'expanded',
+  accessLabelCollapsed: 'collapsed',
 
   constructor: ($el, shadow=false) ->
     # Cache elements

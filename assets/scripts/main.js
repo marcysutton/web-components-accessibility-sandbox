@@ -35,9 +35,9 @@ CustomDropdown = (function() {
 
   CustomDropdown.prototype.elCustomDropdownUl = null;
 
-  CustomDropdown.prototype.accessLabelExpanded = 'collapsed';
+  CustomDropdown.prototype.accessLabelExpanded = 'expanded';
 
-  CustomDropdown.prototype.accessLabelCollapsed = 'expanded';
+  CustomDropdown.prototype.accessLabelCollapsed = 'collapsed';
 
   function CustomDropdown($el, shadow) {
     if (shadow == null) {
