@@ -1,0 +1,41 @@
+{
+  "name": "webcomponents.js",
+  "version": "0.5.5-1",
+  "description": "webcomponents.js",
+  "main": "webcomponents.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webcomponents/webcomponentsjs.git"
+  },
+  "author": {
+    "name": "The Polymer Authors"
+  },
+  "license": {
+    "type": "BSD-3-Clause",
+    "url": "http://polymer.github.io/LICENSE.txt"
+  },
+  "bugs": {
+    "url": "https://github.com/webcomponents/webcomponentsjs/issues"
+  },
+  "homepage": "http://webcomponents.org",
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-audit": "^1.0.0",
+    "gulp-concat": "^2.4.1",
+    "gulp-header": "^1.1.1",
+    "gulp-uglify": "^1.0.1",
+    "run-sequence": "^1.0.1",
+    "web-component-tester": "*"
+  },
+  "readme": "webcomponents.js\n================\n\n[![Join the chat at https://gitter.im/webcomponents/webcomponentsjs](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/webcomponents/webcomponentsjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)\n\nA suite of polyfills supporting the [Web Components](http://webcomponents.org) specs:\n\n**Custom Elements**: allows authors to define their own custom tags ([spec](https://w3c.github.io/webcomponents/spec/custom/)).\n\n**HTML Imports**: a way to include and reuse HTML documents via other HTML documents ([spec](https://w3c.github.io/webcomponents/spec/imports/)).\n\n**Shadow DOM**: provides encapsulation by hiding DOM subtrees under shadow roots ([spec](https://w3c.github.io/webcomponents/spec/shadow/)).\n\nThis also folds in polyfills for `MutationObserver` and `WeakMap`.\n\n\n## Releases\n\nPre-built (concatenated & minified) versions of the polyfills are maintained in the [tagged versions](https://github.com/webcomponents/webcomponentsjs/releases) of this repo. There are two variants:\n\n`webcomponents.js` includes all of the polyfills.\n\n`webcomponents-lite.js` includes all polyfills except for shadow DOM.\n\n\n## Browser Support\n\nOur polyfills are intended to work in the latest versions of evergreen browsers. See below\nfor our complete browser support matrix:\n\n| Polyfill   | IE10 | IE11+ | Chrome* | Firefox* | Safari 7+* | Chrome Android* | Mobile Safari* |\n| ---------- |:----:|:-----:|:-------:|:--------:|:----------:|:---------------:|:--------------:|\n| Custom Elements | ~ | ✓ | ✓ | ✓ | ✓ | ✓| ✓ |\n| HTML Imports | ~ | ✓ | ✓ | ✓ | ✓| ✓| ✓ |\n| Shadow DOM | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |\n| Templates | ✓ | ✓ | ✓ | ✓| ✓ | ✓ | ✓ |\n\n\n*Indicates the current version of the browser\n\n~Indicates support may be flaky. If using Custom Elements or HTML Imports with Shadow DOM,\nyou will get the non-flaky Mutation Observer polyfill that Shadow DOM includes.\n\nThe polyfills may work in older browsers, however require additional polyfills (such as classList)\nto be used. We cannot guarantee support for browsers outside of our compatibility matrix.\n\n\n### Manually Building\n\nIf you wish to build the polyfills yourself, you'll need `node` and `gulp` on your system:\n\n * install [node.js](http://nodejs.org/) using the instructions on their website\n * use `npm` to install [gulp.js](http://gulpjs.com/): `npm install -g gulp`\n\nNow you are ready to build the polyfills with:\n\n    # install dependencies\n    npm install\n    # build\n    gulp build\n\nThe builds will be placed into the `dist/` directory.\n\n## Contribute\n\nSee the [contributing guide](CONTRIBUTING.md)\n\n## License\n\nEverything in this repository is BSD style license unless otherwise specified.\n\nCopyright (c) 2015 The Polymer Authors. All rights reserved.\n\n",
+  "readmeFilename": "README.md",
+  "_id": "webcomponents.js@0.5.5-1",
+  "dist": {
+    "shasum": "0b9a4cfb633a6a0cf15dd2b19bbe4828738839e9"
+  },
+  "_from": "webcomponents.js@",
+  "_resolved": "https://registry.npmjs.org/webcomponents.js/-/webcomponents.js-0.5.5-1.tgz"
+}

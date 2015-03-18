@@ -12,7 +12,6 @@ ContentReplacements = (function() {
     nameTagText = 'TACOCAT';
     tacoBtnHost = document.querySelector(tacoButtonSelector);
     tacoBtnRoot = tacoBtnHost.createShadowRoot();
-    console.log(tacoBtnRoot);
     tacoBtnRoot.textContent = tacoButtonText;
     nameTag = document.querySelector(nameTagSelector);
     nameTagShadow = nameTag.createShadowRoot();
