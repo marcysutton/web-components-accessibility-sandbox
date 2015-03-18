@@ -151,6 +151,7 @@ main {
 section {
   display: inline-block;
   padding-right: 16px;
+  max-width: 320px;
   vertical-align: top; }
   section header p {
     max-width: 320px; }

@@ -1,6 +1,8 @@
 class ContentReplacements
 
   constructor: () ->
+    originalCreateShadowRoot = Element.prototype.createShadowRoot
+
     tacoButtonText = 'Give me tacos'
     tacoButtonSelector = '.taco-button'
     nameTagSelector = '.name-tag'
@@ -9,6 +11,7 @@ class ContentReplacements
 
     tacoBtnHost = document.querySelector(tacoButtonSelector)
     tacoBtnRoot = tacoBtnHost.createShadowRoot()
+    console.log(tacoBtnRoot)
     tacoBtnRoot.textContent = tacoButtonText
 
     nameTag = document.querySelector(nameTagSelector)

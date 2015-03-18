@@ -3,7 +3,8 @@ var ContentReplacements;
 
 ContentReplacements = (function() {
   function ContentReplacements() {
-    var nameTag, nameTagSelector, nameTagShadow, nameTagTemplateSelector, nameTagText, nameTagTmpl, tacoBtnHost, tacoBtnRoot, tacoButtonSelector, tacoButtonText;
+    var nameTag, nameTagSelector, nameTagShadow, nameTagTemplateSelector, nameTagText, nameTagTmpl, originalCreateShadowRoot, tacoBtnHost, tacoBtnRoot, tacoButtonSelector, tacoButtonText;
+    originalCreateShadowRoot = Element.prototype.createShadowRoot;
     tacoButtonText = 'Give me tacos';
     tacoButtonSelector = '.taco-button';
     nameTagSelector = '.name-tag';
@@ -11,6 +12,7 @@ ContentReplacements = (function() {
     nameTagText = 'TACOCAT';
     tacoBtnHost = document.querySelector(tacoButtonSelector);
     tacoBtnRoot = tacoBtnHost.createShadowRoot();
+    console.log(tacoBtnRoot);
     tacoBtnRoot.textContent = tacoButtonText;
     nameTag = document.querySelector(nameTagSelector);
     nameTagShadow = nameTag.createShadowRoot();
